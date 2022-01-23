@@ -5,7 +5,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    background-color: #fbeeee;
+	background-color: #fbeeee;
 
 	&__container {
 		display: flex;
@@ -13,26 +13,34 @@
 		align-items: center;
 		margin: 0 3rem;
 		width: 100%;
-        flex-direction: column-reverse;
-        
-        
+		flex-direction: column-reverse;
 
-        @include md{
-            flex-direction: row;
-        }
+		@include md {
+			flex-direction: row;
+		}
+
+		&-icons {
+			display: flex;
+
+			li:not(:last-child) {
+				margin-right: 1.5rem;
+			}
+		}
 
 		&-left {
-            margin-top:3rem;
+			margin-top: 3rem;
 
-            @include md{
-                margin-top: .5rem;
-            }
+			@include md {
+				margin-top: 0.5rem;
+			}
 
 			h2 {
 				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
 			}
 			p {
 				font-size: 1.4rem;
+				margin-bottom: 0.5rem;
 			}
 		}
 
