@@ -1,24 +1,29 @@
 import Typed from 'react-typed';
+import styles from '../styles/components/hero.module.scss';
+import Image from 'next/image';
 
 const Hero = () => {
 	return (
-		<div className="relative h-screen flex justify-center items-center">
-			<video
-				className="absolute h-full w-full top-0 left-0 object-cover -z-10"
-				autoPlay
-				muted
-				loop
-			>
-				<source src="/bg_video_Trim.mp4" />
-			</video>
-			<div>
-				<Typed
-					strings={['Hi, There! 👋', "I'm Shubham Kumar..."]}
-					typeSpeed={100}
-					className="text-4xl font-semibold text-violet-800"
-				/>
+		<section className={styles.hero}>
+			<div className={styles.hero__container}>
+				<div className={`${styles['hero__container-left']}`}>
+					<h2>I am shubham</h2>
+					<p>I am a frontend developer</p>
+				</div>
+				<div className={`${styles['hero__container-right']}`}>
+					<div
+						className={`${styles['hero__container-img-container']}`}
+					>
+						<Image
+							src={'/portfolio_img.jpg'}
+							layout="fill"
+							objectFit="cover"
+							className={`${styles['hero__container-img']}`}
+						/>
+					</div>
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

@@ -6,14 +6,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-typed": "^1.2.0"
+    "react-typed": "^1.2.0",
+    "sass": "^1.49.0",
+    "tailwindcss": "^3.0.15"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.4",
-    "tailwindcss": "^3.0.0"
+    "postcss": "^8.4.4"
   }
 }

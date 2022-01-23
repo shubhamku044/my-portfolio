@@ -1,0 +1,12 @@
+.underdevelopment {
+	width: 100%;
+	margin: 4rem auto;
+	display: flex;
+	justify-content: center;
+
+	&__heading {
+		margin: 2rem auto;
+		font-size: 2rem;
+		text-transform: uppercase;
+	}
+}

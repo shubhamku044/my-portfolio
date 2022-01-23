@@ -1,0 +1,53 @@
+@import '../abstracts/breakpoints';
+
+.hero {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: #fbeeee;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 3rem;
+		width: 100%;
+        flex-direction: column-reverse;
+        
+        
+
+        @include md{
+            flex-direction: row;
+        }
+
+		&-left {
+            margin-top:3rem;
+
+            @include md{
+                margin-top: .5rem;
+            }
+
+			h2 {
+				font-size: 2.5rem;
+			}
+			p {
+				font-size: 1.4rem;
+			}
+		}
+
+		&-right {
+			margin: 0 auto;
+		}
+
+		&-img {
+			border-radius: 1.2rem;
+
+			&-container {
+				position: relative;
+				height: 18rem;
+				width: 16rem;
+			}
+		}
+	}
+}
