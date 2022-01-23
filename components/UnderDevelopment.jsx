@@ -4,7 +4,7 @@ const UnderDevelopment = () => {
 	return (
 		<div className={styles.underdevelopment}>
 			<h2 className={styles.underdevelopment__heading}>
-				the website under development
+				This site is currently under maintenance. Thanks for checking it out!
 			</h2>
 		</div>
 	);
