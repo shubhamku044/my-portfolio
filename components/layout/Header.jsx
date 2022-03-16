@@ -56,12 +56,23 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <div className={styles.container__aside}>
+      <div className={styles.container__aside} style={{ position: 'relative' }}>
         <aside
           className={`${styles['container__aside-main']} ${
             openNav ? styles['container__aside-main-active'] : ''
           }`}
         >
+          {/* <div
+            className={`${styles['container__main-hamburger']} ${
+              openNav ? styles['container__main-hamburger-active'] : ''
+            }`}
+            onClick={() => setOpenNav(!openNav)}
+            style={{ position: 'absolute', top: '30px', right: '20px' }}
+          >
+            <span className={styles['container__main-hamburger-1']}></span>
+            <span className={styles['container__main-hamburger-2']}></span>
+            <span className={styles['container__main-hamburger-3']}></span>
+          </div> */}
           <nav>
             <ol>
               <li>About</li>
