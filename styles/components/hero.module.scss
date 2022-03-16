@@ -19,8 +19,6 @@
       flex-direction: row;
     }
 
-   
-
     &-left {
       margin-top: 3rem;
 
@@ -39,10 +37,11 @@
     }
 
     &-right {
-      // margin: 0 2rem;
+      z-index: 10;
     }
 
     &-img {
+      z-index: 1;
       border-radius: 1.2rem;
 
       &-container {
