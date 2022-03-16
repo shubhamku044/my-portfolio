@@ -4,6 +4,8 @@ import UnderDevelopment from '../components/UnderDevelopment';
 import styles from '../styles/Home.module.scss';
 import Footer from '../components/layout/Footer';
 import dynamic from 'next/dynamic';
+import Social from '../components/layout/Social';
+import Mail from '../components/layout/Mail';
 
 const Header = dynamic(() => import('../components/layout/Header'), {
   ssr: false,
@@ -23,6 +25,9 @@ export default function Home() {
         <UnderDevelopment />
       </main>
       <Footer />
+
+      <Social />
+      <Mail />
     </div>
   );
 }

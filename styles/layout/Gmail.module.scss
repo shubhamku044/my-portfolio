@@ -1,0 +1,46 @@
+@import '../abstracts/breakpoints';
+@import '../abstracts/variables';
+.container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 1.6rem;
+  color: white;
+
+  @include md {
+    display: block;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+
+    a,
+    a:active {
+      text-decoration: none;
+      letter-spacing: 1.8px;
+      color: inherit;
+      writing-mode: vertical-lr;
+      font-weight: 200;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease-out;
+      font-size: $font-sm;
+
+      &:hover {
+        color: rgb(36, 236, 153);
+        transform: translateY(-6px);
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      background: white;
+    }
+  }
+}

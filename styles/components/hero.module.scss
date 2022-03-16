@@ -19,13 +19,7 @@
       flex-direction: row;
     }
 
-    &-icons {
-      display: flex;
-
-      li:not(:last-child) {
-        margin-right: 1.5rem;
-      }
-    }
+   
 
     &-left {
       margin-top: 3rem;
