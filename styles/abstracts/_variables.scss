@@ -1,3 +1,6 @@
+// Small Mobile Phones
+$screen-xs-min: 440px;
+
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 576px;
 
@@ -9,3 +12,17 @@ $screen-lg-min: 992px;
 
 // Large tablets and desktops
 $screen-xl-min: 1200px;
+
+// Larger Screen desktops
+$screen-2xl-min: 1500px;
+
+// Font sizes
+$font-4xl: 4rem;
+$font-3xl: 3rem;
+$font-2xl: 2.4rem;
+$font-xl: 1rem;
+$font-lg: 1.8rem;
+$font-md: 1rem;
+$font-base: 1.2rem;
+$font-sm: 0.8rem;
+$font-xs: 0.6rem;

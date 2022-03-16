@@ -1,4 +1,3 @@
-import Typed from 'react-typed';
 import styles from '../styles/components/hero.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -74,9 +73,7 @@ const Hero = () => {
 					</ul>
 				</div>
 				<div className={`${styles['hero__container-right']}`}>
-					<div
-						className={`${styles['hero__container-img-container']}`}
-					>
+					<div className={`${styles['hero__container-img-container']}`}>
 						<Image
 							src={'/portfolio_img.jpg'}
 							layout="fill"
