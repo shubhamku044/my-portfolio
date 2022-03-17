@@ -7,10 +7,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: #4a0677b4;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000000;
+  transition: all 0.3s ease-out;
 
   &__main {
     display: flex;
@@ -48,6 +46,10 @@
     }
 
     &-button {
+      display: none;
+      @include md {
+        display: block;
+      }
       font-size: $font-base;
       padding: 1rem 1.2rem;
       border: 2px solid aqua;
@@ -55,9 +57,8 @@
     }
 
     &-hamburger {
-      display: block;
       cursor: pointer;
-      z-index: 2000000000;
+      display: block;
       @include md {
         display: none;
       }
@@ -110,11 +111,11 @@
     &-overlay {
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0;
       height: 100%;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.25);
-      transform: translateX(-100%);
+      transform: translateX(100%);
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       z-index: 1000;
       backdrop-filter: blur(4px);
@@ -127,11 +128,11 @@
       position: fixed;
       z-index: 1000000;
       top: 0;
-      left: 0;
+      right: 0;
       height: 100%;
       width: min(75vw, 400px);
-      background-color: #0e185f;
-      transform: translateX(-100%);
+      background-color: $color-sidebar;
+      transform: translateX(100%);
       transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       padding: 0.4rem 0.8rem;
       display: flex;

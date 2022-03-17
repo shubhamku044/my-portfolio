@@ -1,53 +1,68 @@
 @import '../abstracts/breakpoints';
+@import '../abstracts/variables';
 
 .hero {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: antiquewhite;
-
   &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 3rem;
-    width: 100%;
-    flex-direction: column-reverse;
-
-    @include md {
-      flex-direction: row;
+    & > *:not(:last-child) {
+      margin-bottom: 1.4rem;
     }
 
-    &-left {
-      margin-top: 3rem;
-
-      @include md {
-        margin-top: 0.5rem;
-      }
-
-      h2 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-      }
+    &-1 {
+      font-weight: 400;
       p {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
+        color: $color-tertiary;
+        font-size: $font-sm;
+        margin-bottom: 0.4rem;
+        @include md {
+          font-size: $font-base;
+        }
+      }
+      h1 {
+        color: $color-primary;
+        font-size: $font-3xl;
+        margin-bottom: 0.4rem;
+        font-weight: 800;
+        @include lg {
+          font-size: $font-4xl;
+        }
+      }
+      h2 {
+        color: $color-secondary;
+        font-size: $font-2xl;
+        @include lg {
+          font-size: $font-3xl;
+        }
       }
     }
+    &-2 {
+      p {
+        color: $color-text;
+        max-width: 34rem;
+        font-size: $font-sm;
 
-    &-right {
-      z-index: 10;
+        @include md {
+          max-width: 42rem;
+          font-size: $font-base;
+        }
+      }
     }
+    &-3 {
+      margin-top:2rem;
+      display:none;
+      a {
+        text-decoration: none;
+        font-size: $font-xl;
+        color: $color-tertiary;
+        border: 2px solid $color-tertiary;
+        padding: 0.4rem 1.2rem;
+        border-radius: 4px;
 
-    &-img {
-      z-index: 1;
-      border-radius: 1.2rem;
-
-      &-container {
-        position: relative;
-        height: 18rem;
-        width: 16rem;
+        @include md {
+          display: none;
+        }
       }
     }
   }

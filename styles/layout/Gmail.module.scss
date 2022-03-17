@@ -1,13 +1,15 @@
 @import '../abstracts/breakpoints';
 @import '../abstracts/variables';
 .container {
-  display: none;
+  // display: none;
   position: fixed;
   bottom: 0;
-  right: 1.6rem;
-  color: white;
+  color: $color-white;
+  right: .9rem;
 
+  
   @include md {
+    right: 1.8rem;
     display: block;
   }
 
@@ -21,7 +23,7 @@
     a,
     a:active {
       text-decoration: none;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.2px;
       color: inherit;
       writing-mode: vertical-lr;
       font-weight: 200;
@@ -30,7 +32,8 @@
       font-size: $font-sm;
 
       &:hover {
-        color: rgb(36, 236, 153);
+        letter-spacing: 1.8px;
+        color: $color-tertiary;
         transform: translateY(-6px);
       }
     }
@@ -38,9 +41,9 @@
     &::after {
       content: '';
       display: block;
-      width: 1px;
+      width: 2px;
       height: 90px;
-      background: white;
+      background: $color-tertiary;
     }
   }
 }
