@@ -138,3 +138,16 @@ body::-webkit-scrollbar-thumb {
   background-color: $color-tertiary;
   border-radius: 2rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}

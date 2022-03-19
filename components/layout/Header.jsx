@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { navBarState } from '../../atoms/navbarState';
 import { useRecoilState } from 'recoil';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Header = () => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
@@ -47,7 +48,9 @@ const Header = () => {
             transition={{ duration: 0.3 }}
             className={styles['container__main-left']}
           >
-            SS
+            <Link href={'/'}>
+              <a>SS</a>
+            </Link>
           </motion.h1>
           <div className={styles['container__main-right']}>
             <ol>
@@ -56,7 +59,7 @@ const Header = () => {
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                About
+                <a href="#about">About</a>
               </motion.li>
               <motion.li
                 initial={{ translateY: -30, opacity: 0 }}

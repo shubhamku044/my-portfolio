@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
+import About from '../components/About';
 import UnderDevelopment from '../components/UnderDevelopment';
 import styles from '../styles/Home.module.scss';
 import Footer from '../components/layout/Footer';
@@ -38,6 +39,7 @@ export default function Home() {
       <SideNav />
       <main className={styles.container__main}>
         <Hero />
+        <About />
         <UnderDevelopment />
       </main>
       <Footer />
