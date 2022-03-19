@@ -1,0 +1,71 @@
+@import '../abstracts/breakpoints';
+@import '../abstracts/variables';
+
+.container {
+  height: 100%;
+  width: 100%;
+  @include md {
+    display: none;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    transform: translateX(100%);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    &-active {
+      transform: translateX(0);
+    }
+  }
+
+  &-main {
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(75vw, 400px);
+    background-color: $color-sidebar;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-active {
+      transform: translateX(0);
+    }
+
+    nav {
+      width: 100%;
+
+      ol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        li {
+          color: white;
+          cursor: pointer;
+          list-style-type: decimal-leading-zero;
+          font-size: $font-lg;
+
+          &::marker {
+            font-size: $font-sm;
+            color: #d9ce3f;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 4rem;
+          }
+        }
+      }
+    }
+  }
+}

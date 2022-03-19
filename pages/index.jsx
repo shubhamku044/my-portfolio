@@ -8,6 +8,7 @@ import Social from '../components/layout/Social';
 import Mail from '../components/layout/Mail';
 import { navBarState } from '../atoms/navbarState';
 import { useRecoilState } from 'recoil';
+import SideNav from '../components/layout/SideNav';
 
 const Header = dynamic(() => import('../components/layout/Header'), {
   ssr: false,
@@ -34,6 +35,7 @@ export default function Home() {
       </Head>
 
       <Header />
+      <SideNav />
       <main className={styles.container__main}>
         <Hero />
         <UnderDevelopment />

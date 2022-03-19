@@ -2,6 +2,7 @@ import styles from '../../styles/layout/Header.module.scss';
 import { useState, useEffect } from 'react';
 import { navBarState } from '../../atoms/navbarState';
 import { useRecoilState } from 'recoil';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
@@ -40,16 +41,57 @@ const Header = () => {
         }
       >
         <nav className={styles.container__main}>
-          <h1 className={styles['container__main-left']}>SS</h1>
+          <motion.h1
+            initial={{ translateY: -30, opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className={styles['container__main-left']}
+          >
+            SS
+          </motion.h1>
           <div className={styles['container__main-right']}>
-            <ul>
-              <li>About</li>
-              <li>Projects</li>
-              <li>Work</li>
-              <li>Blogs</li>
-            </ul>
-            <div className={styles['container__main-button']}>Contact</div>
-            <div
+            <ol>
+              <motion.li
+                initial={{ translateY: -30, opacity: 0 }}
+                animate={{ translateY: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                About
+              </motion.li>
+              <motion.li
+                initial={{ translateY: -30, opacity: 0 }}
+                animate={{ translateY: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                Projects
+              </motion.li>
+              <motion.li
+                initial={{ translateY: -30, opacity: 0 }}
+                animate={{ translateY: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                Work
+              </motion.li>
+              <motion.li
+                initial={{ translateY: -30, opacity: 0 }}
+                animate={{ translateY: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
+                Blogs
+              </motion.li>
+            </ol>
+            <motion.div
+              initial={{ translateY: -30, opacity: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
+              className={styles['container__main-button']}
+            >
+              Contact
+            </motion.div>
+            <motion.div
+              initial={{ translateY: -30, opacity: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className={`${styles['container__main-hamburger']} ${
                 openNav ? styles['container__main-hamburger-active'] : ''
               }`}
@@ -58,31 +100,9 @@ const Header = () => {
               <span className={styles['container__main-hamburger-1']}></span>
               <span className={styles['container__main-hamburger-2']}></span>
               <span className={styles['container__main-hamburger-3']}></span>
-            </div>
+            </motion.div>
           </div>
         </nav>
-      </div>
-      <div className={styles.container__aside}>
-        <aside
-          className={`${styles['container__aside-main']} ${
-            openNav ? styles['container__aside-main-active'] : ''
-          }`}
-        >
-          <nav>
-            <ol>
-              <li>About</li>
-              <li>Projects</li>
-              <li>Work</li>
-              <li>Blogs</li>
-            </ol>
-          </nav>
-        </aside>
-        <div
-          className={`${styles['container__aside-overlay']} ${
-            openNav ? styles['container__aside-overlay-active'] : ''
-          }`}
-          onClick={() => setOpenNav(!openNav)}
-        />
       </div>
     </>
   );
