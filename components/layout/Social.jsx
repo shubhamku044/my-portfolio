@@ -93,6 +93,22 @@ const Social = () => {
               </a>
             </Link>
           </motion.li>
+          <motion.li
+            initial={{ translateY: 20, opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 2.1 }}
+          >
+            <Link href="https://shubhamku044.hashnode.dev/">
+              <a target={'_blank'}>
+                <Image
+                  src="/icons/hashnode.svg"
+                  objectFit="contain"
+                  width={20}
+                  height={20}
+                />
+              </a>
+            </Link>
+          </motion.li>
         </ul>
       </div>
     </div>
