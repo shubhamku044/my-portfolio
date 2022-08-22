@@ -43,7 +43,6 @@ export default function Home() {
         <UnderDevelopment />
       </main>
       <Footer />
-
       <Social />
       <Mail />
     </div>

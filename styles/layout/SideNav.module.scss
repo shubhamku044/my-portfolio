@@ -31,7 +31,8 @@
     right: 0;
     height: 100%;
     width: min(75vw, 400px);
-    background-color: $color-sidebar;
+    background-color: rgba($color-background, 0.5);
+    backdrop-filter: blur(10px);
     transform: translateX(100%);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     padding: 0.4rem 0.8rem;
