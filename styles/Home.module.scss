@@ -7,7 +7,11 @@
   &__main {
     max-width: 62.5rem;
     margin: 0 auto;
-    padding: 0 3.4rem;
+    padding: 0 1.2rem;
+
+    @include sm {
+      padding: 0 2.4rem;
+    }
     @include md {
       padding: 0 5rem;
     }

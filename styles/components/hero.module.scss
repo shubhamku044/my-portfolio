@@ -22,9 +22,12 @@
       }
       h1 {
         color: $color-yellow-primary;
-        font-size: $font-3xl;
+        font-size: $font-2xl;
         margin-bottom: 0.4rem;
         font-weight: 800;
+        @include sm {
+          font-size: $font-3xl;
+        }
         @include lg {
           font-size: $font-4xl;
         }

@@ -1,7 +1,7 @@
 @import '../abstracts/breakpoints';
 @import '../abstracts/variables';
 .container {
-  // display: none;
+  display: none;
   position: fixed;
   bottom: 0;
   color: $color-white;
