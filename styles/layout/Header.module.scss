@@ -2,7 +2,7 @@
 @import '../abstracts/variables';
 
 .container {
-  color: aqua;
+  color: $color-yellow-primary;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,8 +14,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 0.8rem 1.6rem;
+    max-width: 94rem;
+    margin-inline: auto;
 
     @include md {
       padding: 0.8rem 4rem;
@@ -38,22 +39,23 @@
       }
       ol {
         display: none;
-        list-style-type: decimal-leading-zero;
+        // list-style-type: decimal-leading-zero;
+        list-style-type: none;
         @include md {
           display: flex;
         }
         li {
           &:not(:last-child) {
-            margin-right: 3rem;
+            margin-right: 2rem;
 
             @include lg {
-              margin-right: 4rem;
+              margin-right: 2.4rem;
             }
           }
 
           &::marker {
             font-size: $font-xs;
-            color: $color-tertiary;
+            color: #dddddd;
           }
         }
       }
@@ -65,9 +67,10 @@
         display: block;
       }
       font-size: $font-base;
-      padding: 1rem 1.2rem;
-      border: 2px solid aqua;
+      padding: 0.6rem 1rem;
+      border: 1.8px solid $color-yellow-secondary;
       border-radius: 4px;
+      cursor: pointer;
     }
 
     &-hamburger {

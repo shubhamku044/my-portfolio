@@ -13,7 +13,7 @@
     &-1 {
       font-weight: 400;
       p {
-        color: $color-tertiary;
+        color: $color-yellow-secondary;
         font-size: $font-sm;
         margin-bottom: 0.4rem;
         @include md {
@@ -21,7 +21,7 @@
         }
       }
       h1 {
-        color: $color-primary;
+        color: $color-yellow-primary;
         font-size: $font-3xl;
         margin-bottom: 0.4rem;
         font-weight: 800;
@@ -30,7 +30,7 @@
         }
       }
       h2 {
-        color: $color-secondary;
+        color: $color-gray;
         font-size: $font-2xl;
         @include lg {
           font-size: $font-3xl;
@@ -39,9 +39,10 @@
     }
     &-2 {
       p {
-        color: $color-text;
+        color: $color-gray;
         max-width: 34rem;
         font-size: $font-sm;
+        letter-spacing: 2px;
 
         @include md {
           max-width: 42rem;
@@ -50,8 +51,8 @@
       }
     }
     &-3 {
-      margin-top:2rem;
-      display:none;
+      margin-top: 2rem;
+      display: none;
       a {
         text-decoration: none;
         font-size: $font-xl;

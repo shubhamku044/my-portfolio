@@ -135,7 +135,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $color-tertiary;
+  background-color: rgba($color-yellow-secondary, 0.6);
   border-radius: 2rem;
 }
 

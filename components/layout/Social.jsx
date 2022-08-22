@@ -96,7 +96,7 @@ const Social = () => {
           <motion.li
             initial={{ translateY: 20, opacity: 0 }}
             animate={{ translateY: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 2.1 }}
+            transition={{ duration: 0.5, delay: 2.2 }}
           >
             <Link href="https://shubhamku044.hashnode.dev/">
               <a target={'_blank'}>

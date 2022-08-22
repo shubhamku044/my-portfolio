@@ -5,9 +5,8 @@
   position: fixed;
   bottom: 0;
   color: $color-white;
-  right: .9rem;
+  right: 0.9rem;
 
-  
   @include md {
     right: 1.8rem;
     display: block;
@@ -33,7 +32,7 @@
 
       &:hover {
         letter-spacing: 1.8px;
-        color: $color-tertiary;
+        color: $color-yellow-primary;
         transform: translateY(-6px);
       }
     }
