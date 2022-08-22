@@ -66,7 +66,7 @@
         line-height: 22px;
 
         @include md {
-          max-width: 42rem;
+          max-width: 40rem;
           font-size: $font-base;
         }
       }
@@ -76,7 +76,7 @@
       // display: none;
       a {
         text-decoration: none;
-        font-size: $font-lg;
+        font-size: $font-base;
         color: $color-yellow-primary;
         border: 1.8px solid $color-yellow-secondary;
         padding: 0.3rem 1.2rem;

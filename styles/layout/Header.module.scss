@@ -9,6 +9,7 @@
   width: 100vw;
   z-index: 10000000;
   transition: all 0.3s ease-out;
+  backdrop-filter: blur(12px);
 
   &__main {
     display: flex;

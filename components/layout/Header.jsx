@@ -33,9 +33,7 @@ const Header = () => {
           window.pageYOffset > 50 && !openNav
             ? {
                 boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
-                backgroundColor: 'rgba(7, 34, 39, .7)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
+                backgroundColor: 'rgba(34, 40, 49, .95)',
                 transition: 'all .3s ease-out',
               }
             : {}

@@ -7,12 +7,11 @@
     align-items: baseline;
     font-size: $font-xl;
     font-weight: 600;
-
     color: $color-yellow-primary;
+
     @include xs {
       font-weight: 700;
     }
-
     @include sm {
       font-size: $font-2xl;
     }
@@ -21,29 +20,15 @@
       counter-increment: section 1;
       content: '0' counter(section) '.';
       position: relative;
-      font-size: $font-base;
-
+      font-size: $font-sm;
+      font-weight: 400;
       margin-right: 10px;
       @include sm {
-        font-size: $font-md;
+        font-size: $font-base;
       }
     }
-    &::before,
-    &::after {
+    &::before {
       color: $color-yellow-secondary;
-    }
-    &::after {
-      content: '';
-      display: block;
-      position: relative;
-      height: 1px;
-      background-color: $color-yellow-secondary;
-      margin-left: 20px;
-      width: 150px;
-
-      @include md {
-        width: 300px;
-      }
     }
   }
 
