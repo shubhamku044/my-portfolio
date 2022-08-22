@@ -5,9 +5,14 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  user-select: none;
   &__container {
     & > *:not(:last-child) {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1rem;
+
+      @include sm {
+        margin-bottom: 1.8rem;
+      }
     }
 
     &-1 {
@@ -22,11 +27,17 @@
       }
       h1 {
         color: $color-yellow-primary;
-        font-size: $font-2xl;
+        font-size: $font-xl;
         margin-bottom: 0.4rem;
-        font-weight: 800;
+        font-weight: 600;
+        margin-top: 0.8rem;
+
+        @include xs {
+          font-size: $font-2xl;
+        }
         @include sm {
           font-size: $font-3xl;
+          margin-top: 1.2rem;
         }
         @include lg {
           font-size: $font-4xl;
@@ -34,7 +45,13 @@
       }
       h2 {
         color: $color-gray;
-        font-size: $font-2xl;
+        font-size: $font-lg;
+        font-weight: 500;
+
+        @include xs {
+          font-size: $font-xl;
+        }
+
         @include lg {
           font-size: $font-3xl;
         }
@@ -46,6 +63,7 @@
         max-width: 34rem;
         font-size: $font-sm;
         letter-spacing: 2px;
+        line-height: 22px;
 
         @include md {
           max-width: 42rem;
@@ -55,14 +73,15 @@
     }
     &-3 {
       margin-top: 2rem;
-      display: none;
+      // display: none;
       a {
         text-decoration: none;
-        font-size: $font-xl;
-        color: $color-tertiary;
-        border: 2px solid $color-tertiary;
-        padding: 0.4rem 1.2rem;
+        font-size: $font-lg;
+        color: $color-yellow-primary;
+        border: 1.8px solid $color-yellow-secondary;
+        padding: 0.3rem 1.2rem;
         border-radius: 4px;
+        cursor: pointer;
 
         @include md {
           display: none;

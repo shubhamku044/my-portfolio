@@ -45,6 +45,7 @@
           display: flex;
         }
         li {
+          cursor: pointer;
           &:not(:last-child) {
             margin-right: 2rem;
 
@@ -83,7 +84,7 @@
         display: block;
         width: 1.8rem;
         height: 2px;
-        background-color: aqua;
+        background-color: $color-yellow-primary;
         &:not(:last-child) {
           margin-bottom: 0.5rem;
         }

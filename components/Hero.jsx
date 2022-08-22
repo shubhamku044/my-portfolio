@@ -19,7 +19,7 @@ const Hero = () => {
             animate={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 1.1 }}
           >
-            Shubham Sharma
+            Shubham Sharma.
           </motion.h1>
           <motion.h2
             initial={{ translateY: 30, opacity: 0 }}
@@ -41,11 +41,16 @@ const Hero = () => {
             Upstatement.
           </motion.p>
         </div>
-        <div className={`${styles['hero__container-3']}`}>
+        <motion.div
+          initial={{ translateY: 30, opacity: 0 }}
+          animate={{ translateY: 0, opacity: 1 }}
+          transition={{ duration: 0.3, delay: 1.7 }}
+          className={`${styles['hero__container-3']}`}
+        >
           <Link href={'#'}>
-            <motion.a target={'_blank'}>Contact</motion.a>
+            <a target={'_blank'}>Contact</a>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

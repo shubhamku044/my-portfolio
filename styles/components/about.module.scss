@@ -6,8 +6,12 @@
     display: flex;
     align-items: baseline;
     font-size: $font-xl;
-    font-weight: 800;
-    color: $color-primary;
+    font-weight: 600;
+
+    color: $color-yellow-primary;
+    @include xs {
+      font-weight: 700;
+    }
 
     @include sm {
       font-size: $font-2xl;
@@ -26,14 +30,14 @@
     }
     &::before,
     &::after {
-      color: $color-tertiary;
+      color: $color-yellow-secondary;
     }
     &::after {
       content: '';
       display: block;
       position: relative;
       height: 1px;
-      background-color: $color-tertiary;
+      background-color: $color-yellow-secondary;
       margin-left: 20px;
       width: 150px;
 
