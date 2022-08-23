@@ -9,6 +9,7 @@
     max-width: 62.5rem;
     margin: 0 auto;
     padding: 0 1.2rem;
+    overflow-x: hidden;
 
     @include sm {
       padding: 0 2.4rem;

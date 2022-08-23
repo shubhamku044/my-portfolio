@@ -1,0 +1,18 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/variables';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 1.8rem;
+  margin-top: 2rem;
+  @include md {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @include lg {
+    gap: 2rem;
+  }
+}

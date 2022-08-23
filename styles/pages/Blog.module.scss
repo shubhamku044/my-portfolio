@@ -1,0 +1,13 @@
+@import '../abstracts/breakpoints';
+@import '../abstracts/variables';
+
+.container {
+  min-height: 95vh;
+  padding-top: 8rem;
+
+  &__heading {
+    font-size: $font-3xl;
+    color: $color-yellow-primary;
+    font-weight: 700;
+  }
+}
