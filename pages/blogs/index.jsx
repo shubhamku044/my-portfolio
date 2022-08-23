@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import UnderDevelopment from '../../components/UnderDevelopment';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
@@ -38,7 +37,6 @@ const Blogs = ({ posts }) => {
           return (
             <div key={index}>
               <h4>{post.title}</h4>
-              <p>Hello world</p>
             </div>
           );
         })}
@@ -47,6 +45,8 @@ const Blogs = ({ posts }) => {
     </div>
   );
 };
+
+export default Blogs;
 
 export async function getStaticProps(context) {
   const client = new ApolloClient({
@@ -78,5 +78,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-export default Blogs;
