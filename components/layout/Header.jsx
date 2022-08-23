@@ -78,8 +78,8 @@ const Header = () => {
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
               >
-                <Link href={'https://shubhamku044.hashnode.dev/'}>
-                  <a target={`_blank`}>Blogs</a>
+                <Link href={'/blogs'}>
+                  <a>Blogs</a>
                 </Link>
               </motion.li>
             </ol>

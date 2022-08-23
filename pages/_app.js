@@ -1,6 +1,7 @@
 import { RecoilRoot } from 'recoil';
 import '../styles/globals.scss';
 import Script from 'next/script';
+import Layout from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,7 +19,9 @@ function MyApp({ Component, pageProps }) {
           `}
       </Script>
       <RecoilRoot>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </RecoilRoot>
     </>
   );

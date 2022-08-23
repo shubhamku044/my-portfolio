@@ -1,3 +1,7 @@
+@import '../abstracts/breakpoints';
+@import '../abstracts/variables';
+
 .container {
   padding: 2rem;
+  background-color: $color-background;
 }
