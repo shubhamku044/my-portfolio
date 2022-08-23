@@ -20,8 +20,8 @@ const SideNav = () => {
               <li>Projects</li>
               <li>Work</li>
               <li onClick={() => setOpenNav(!openNav)}>
-                <Link href={'https://shubhamku044.hashnode.dev/'}>
-                  <a target={'_blank'}>Blogs</a>
+                <Link href={'/blogs'}>
+                  <a>Blogs</a>
                 </Link>
               </li>
             </ol>

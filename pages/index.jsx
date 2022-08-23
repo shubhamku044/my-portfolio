@@ -8,12 +8,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Shubham Sharma</title>
+        <title>Shubham Sharma | Full-Stack Developer</title>
         <meta
           name="description"
           content="Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer."
         />
-        <meta property="og:title" content="Shubham Sharma" />
+        <meta
+          property="og:title"
+          content="Shubham Sharma | Full-Stack Developer"
+        />
         <meta
           property="og:description"
           content="Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer."
@@ -30,7 +33,6 @@ export default function Home() {
           name="keywords"
           content="shubhamku044, shubham sharma, shubham kumar, shubham dev, shubhams, shubhams.dev"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <>

@@ -7,8 +7,6 @@ const BlogCard = ({ title, brief, id, coverImage, slug }) => {
   const truncate = (para) =>
     para?.length > 150 ? `${para.substring(0, 120)}...` : para;
 
-  const para =
-    'Before understanding what is a react useState hook, let us first know what is a hook? What is a hook? Hooks are a feature of react which allows us to use state and other React features without writing a class.';
   return (
     <motion.div
       initial={{ translateY: 30, opacity: 0 }}
