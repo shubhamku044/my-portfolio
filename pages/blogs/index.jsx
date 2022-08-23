@@ -1,12 +1,7 @@
-import { useEffect, useState } from 'react';
 import UnderDevelopment from '../../components/UnderDevelopment';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const Blogs = ({ posts }) => {
-  const getProps = () => {
-    console.log(posts);
-  };
-
+export default function Blogs({ posts }) {
   return (
     <div
       style={{
@@ -29,16 +24,14 @@ const Blogs = ({ posts }) => {
           fontSize: '2rem',
           cursor: 'pointer',
         }}
-        onClick={getProps}
       >
         get data
       </h2>
       <div>
-        {posts.map((post, index) => {
+        {posts?.map((post, index) => {
           return (
             <div key={index}>
               <h4>{post.title}</h4>
-              <p>Hello world</p>
             </div>
           );
         })}
@@ -46,9 +39,9 @@ const Blogs = ({ posts }) => {
       <UnderDevelopment />
     </div>
   );
-};
+}
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const client = new ApolloClient({
     uri: 'https://api.hashnode.com/',
     cache: new InMemoryCache(),
@@ -78,5 +71,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-export default Blogs;
