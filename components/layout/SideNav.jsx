@@ -1,6 +1,7 @@
 import { navBarState } from '../../atoms/navbarState';
 import { useRecoilState } from 'recoil';
 import styles from '../../styles/layout/SideNav.module.scss';
+import Link from 'next/link';
 
 const SideNav = () => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
@@ -18,7 +19,11 @@ const SideNav = () => {
               <li>About</li>
               <li>Projects</li>
               <li>Work</li>
-              <li>Blogs</li>
+              <li onClick={() => setOpenNav(!openNav)}>
+                <Link href={'https://shubhamku044.hashnode.dev/'}>
+                  <a target={'_blank'}>Blogs</a>
+                </Link>
+              </li>
             </ol>
           </nav>
         </aside>
