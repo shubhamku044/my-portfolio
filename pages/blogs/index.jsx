@@ -1,7 +1,7 @@
 import UnderDevelopment from '../../components/UnderDevelopment';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-export default function Blogs() {
+export default function Blogs({ posts }) {
   return (
     <div
       style={{
