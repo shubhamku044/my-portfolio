@@ -1,11 +1,7 @@
 import UnderDevelopment from '../../components/UnderDevelopment';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const Blogs = ({ posts }) => {
-  const getProps = () => {
-    console.log(posts);
-  };
-
+export default function Blogs() {
   return (
     <div
       style={{
@@ -28,7 +24,6 @@ const Blogs = ({ posts }) => {
           fontSize: '2rem',
           cursor: 'pointer',
         }}
-        onClick={getProps}
       >
         get data
       </h2>
@@ -44,11 +39,9 @@ const Blogs = ({ posts }) => {
       <UnderDevelopment />
     </div>
   );
-};
+}
 
-export default Blogs;
-
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const client = new ApolloClient({
     uri: 'https://api.hashnode.com/',
     cache: new InMemoryCache(),
