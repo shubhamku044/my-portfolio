@@ -28,7 +28,7 @@ export default function Blogs() {
         get data
       </h2>
       <div>
-        {posts.map((post, index) => {
+        {posts?.map((post, index) => {
           return (
             <div key={index}>
               <h4>{post.title}</h4>
