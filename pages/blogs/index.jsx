@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 export default function Blogs({ posts }) {
+  const getPosts = () => {
+    console.log(posts);
+  };
+
   return (
     <>
       <Head>
@@ -37,6 +41,7 @@ export default function Blogs({ posts }) {
           animate={{ translateY: 0, opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.9 }}
           className={styles.container__heading}
+          // onClick={getPosts}
         >
           Blog Posts
         </motion.h1>
