@@ -1,0 +1,44 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/variables';
+
+.container {
+  margin-top: 10rem;
+  &__heading {
+    display: flex;
+    align-items: baseline;
+    font-size: $font-xl;
+    font-weight: 600;
+    color: $color-yellow-primary;
+
+    @include xs {
+      font-weight: 700;
+    }
+    @include sm {
+      font-size: $font-2xl;
+    }
+
+    &::before {
+      counter-increment: section 2;
+      content: '0' counter(section) '.';
+      position: relative;
+      font-size: $font-sm;
+      font-weight: 400;
+      margin-right: 10px;
+      @include sm {
+        font-size: $font-base;
+      }
+    }
+    &::before {
+      color: $color-yellow-secondary;
+    }
+  }
+
+  &__box {
+    margin-top: 2rem;
+    color: $color-gray;
+
+    @include sm {
+      margin-top: 2.4rem;
+    }
+  }
+}

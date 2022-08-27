@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <SideNav />
       <Header />
       <div
         style={
@@ -28,7 +29,6 @@ const Layout = ({ children }) => {
         }
         className={styles.container}
       >
-        <SideNav />
         <main className={styles.container__main}>{children}</main>
         <Social />
         <Mail />

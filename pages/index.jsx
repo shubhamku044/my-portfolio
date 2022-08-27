@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import About from '../components/About';
-import UnderDevelopment from '../components/UnderDevelopment';
 import styles from '../styles/pages/Home.module.scss';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 
 export default function Home() {
   return (
@@ -35,11 +36,16 @@ export default function Home() {
         />
       </Head>
 
-      <>
+      <div
+        style={{
+          overflowY: 'hidden',
+        }}
+      >
         <Hero />
         <About />
-        <UnderDevelopment />
-      </>
+        <Projects />
+        <Contact />
+      </div>
     </>
   );
 }

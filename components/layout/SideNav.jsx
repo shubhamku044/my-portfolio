@@ -16,12 +16,33 @@ const SideNav = () => {
         >
           <nav>
             <ol>
-              <li>About</li>
-              <li>Projects</li>
-              <li>Work</li>
+              <li onClick={() => setOpenNav(!openNav)}>
+                <Link href={'/#about'}>
+                  <a>About</a>
+                </Link>
+              </li>
+              <li onClick={() => setOpenNav(!openNav)}>
+                <Link href={'/#projects'}>
+                  <a>Projects</a>
+                </Link>
+              </li>
               <li onClick={() => setOpenNav(!openNav)}>
                 <Link href={'/blogs'}>
                   <a>Blogs</a>
+                </Link>
+              </li>
+              <li onClick={() => setOpenNav(!openNav)}>
+                <Link href={'/#contact'}>
+                  <a>Contact</a>
+                </Link>
+              </li>
+              <li onClick={() => setOpenNav(!openNav)}>
+                <Link
+                  href={
+                    'https://drive.google.com/file/d/1NVOeSB7wSZCwt1ONXeiCE8jHg2C3R8Rg/view?usp=sharing'
+                  }
+                >
+                  <a target={'_blank'}>Resume</a>
                 </Link>
               </li>
             </ol>

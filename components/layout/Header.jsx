@@ -57,29 +57,35 @@ const Header = () => {
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <a href="#about">About</a>
+                <Link href={'/#about'}>
+                  <a>About</a>
+                </Link>
               </motion.li>
               <motion.li
                 initial={{ translateY: -30, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                Projects
+                <Link href={'/#projects'}>
+                  <a>Projects</a>
+                </Link>
               </motion.li>
               <motion.li
                 initial={{ translateY: -30, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
               >
-                Work
+                <Link href={'/blogs'}>
+                  <a>Blogs</a>
+                </Link>
               </motion.li>
               <motion.li
                 initial={{ translateY: -30, opacity: 0 }}
                 animate={{ translateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
               >
-                <Link href={'/blogs'}>
-                  <a>Blogs</a>
+                <Link href={'/#contact'}>
+                  <a>Contact</a>
                 </Link>
               </motion.li>
             </ol>
@@ -89,7 +95,13 @@ const Header = () => {
               transition={{ duration: 0.3, delay: 0.5 }}
               className={styles['container__main-button']}
             >
-              Contact
+              <Link
+                href={
+                  'https://drive.google.com/file/d/1NVOeSB7wSZCwt1ONXeiCE8jHg2C3R8Rg/view?usp=sharing'
+                }
+              >
+                <a target={'_blank'}>Resume</a>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ translateY: -30, opacity: 0 }}
