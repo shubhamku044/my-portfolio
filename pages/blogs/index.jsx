@@ -5,10 +5,6 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 export default function Blogs({ posts }) {
-  const getPosts = () => {
-    console.log(posts);
-  };
-
   return (
     <>
       <Head>

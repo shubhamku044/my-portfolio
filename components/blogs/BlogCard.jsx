@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const BlogCard = ({ title, brief, id, coverImage, slug }) => {
-  const truncate = (para) =>
-    para?.length > 150 ? `${para.substring(0, 120)}...` : para;
+  const truncate = (para, limit) => `${para.substring(0, limit)}...`;
 
   return (
     <motion.div
@@ -19,8 +18,8 @@ const BlogCard = ({ title, brief, id, coverImage, slug }) => {
         <Image src={coverImage} layout="fill" />
       </div>
       <div className={styles.container__text}>
-        <h2>{title}</h2>
-        <p>{truncate(brief)}</p>
+        <h2>{truncate(title, 48)}</h2>
+        <p>{truncate(brief, 120)}</p>
         <Link href={`https://shubhamku044.hashnode.dev/${slug}`}>
           <a target={'_blank'}>Read Article &rarr;</a>
         </Link>

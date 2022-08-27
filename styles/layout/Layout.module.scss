@@ -4,6 +4,8 @@
 .container {
   background-color: $color-background;
   position: relative;
+  width: 100%;
+  min-width: 100%;
 
   &__main {
     max-width: 62.5rem;
