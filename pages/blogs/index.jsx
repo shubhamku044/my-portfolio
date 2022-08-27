@@ -51,7 +51,7 @@ export default function Blogs({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = new ApolloClient({
     uri: 'https://api.hashnode.com/',
     cache: new InMemoryCache(),
