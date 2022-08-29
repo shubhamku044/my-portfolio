@@ -40,5 +40,128 @@
     @include sm {
       margin-top: 2.4rem;
     }
+
+    &-success {
+      background-color: rgba($color-yellow-primary, 0.1);
+      padding: 1.2rem;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 1.2px;
+      border-left: 3px solid rgba($color-yellow-primary, 0.8);
+      border-radius: 4px;
+
+      @include sm {
+        font-size: $font-md;
+      }
+
+      @include md {
+        font-size: $font-lg;
+      }
+    }
+
+    &-para {
+      max-width: 36rem;
+      font-weight: 400;
+      letter-spacing: 1.2px;
+      line-height: 22px;
+    }
+    &-form {
+      label {
+        text-transform: uppercase;
+        font-size: $font-xs;
+        letter-spacing: 1.8px;
+        font-weight: 500;
+
+        span {
+          color: #f65a83;
+          margin: 0;
+          font-size: $font-sm;
+        }
+      }
+      input,
+      textarea {
+        outline: none;
+        background-color: transparent;
+        border: 0.6px solid rgba($color-yellow-primary, 0.5);
+        margin-top: 0.3rem;
+        color: white;
+        font-weight: 300;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.3rem;
+        font-size: $font-md;
+        letter-spacing: 1.1px;
+        resize: vertical;
+
+        &:focus {
+          border: 1px solid rgba($color-yellow-primary, 0.9);
+        }
+
+        @include md {
+          font-size: $font-md;
+        }
+      }
+
+      button {
+        padding: 0.7rem 1.2rem;
+        font-size: $font-md;
+        font-weight: 600;
+        background-color: $color-yellow-primary;
+        color: $color-background;
+        outline: none;
+        border: 1px solid transparent;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          background-color: transparent;
+          border-color: $color-yellow-primary;
+          color: $color-yellow-primary;
+        }
+      }
+
+      @include lg {
+        max-width: 80%;
+      }
+      margin-top: 2rem;
+
+      & > *:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+
+        &-1 {
+          display: flex;
+          flex-direction: column;
+
+          div {
+            width: 100%;
+          }
+
+          @include md {
+            flex-direction: row;
+          }
+
+          & > *:not(:last-child) {
+            margin-bottom: 1.2rem;
+
+            @include md {
+              margin-bottom: 0;
+              margin-right: 1.2rem;
+            }
+          }
+        }
+
+        span {
+          font-size: $font-xs;
+          margin-top: 0.4rem;
+          margin-left: 0.2rem;
+          color: #f65a83;
+        }
+      }
+    }
   }
 }
