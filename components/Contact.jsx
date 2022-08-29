@@ -39,7 +39,7 @@ const Contact = () => {
   useEffect(() => {
     setTimeout(() => {
       setMailReceived(false);
-    }, 100000);
+    }, 10000);
   }, [sending]);
 
   return (
