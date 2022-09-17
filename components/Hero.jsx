@@ -35,10 +35,11 @@ const Hero = () => {
             animate={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 1.5 }}
           >
-            I&apos;m a software engineer specializing in building (and
-            occasionally designing) exceptional digital experiences. Currently,
-            I&apos;m focused on building accessible, human-centered products at
-            Upstatement.
+            I am Shubham Sharma, a freelance full stack developer based in India
+            with a passion of building amazing things. I have about 2+ years of
+            experience in developing web applications using different
+            technologies. I always keep updating myself with the latest and
+            cutting edge technologies.
           </motion.p>
         </div>
         <motion.div
