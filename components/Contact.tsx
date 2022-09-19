@@ -76,7 +76,7 @@ const Contact: NextPage = () => {
             </div>
           )}
           <ReCAPTCHA
-            sitekey={'6LfKphAiAAAAADaSy0ITs-N4OLwKgP14Xsa1BHoT'}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
             size="invisible"
             ref={reRef}
           />
