@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
-  const { name, email, message, subject } = req.body;
+  const { name, email, message, subject, token } = req.body;
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -14,6 +14,12 @@ export default async (req, res) => {
   });
 
   try {
+    const human = await validateHuman(token);
+
+    if (!human) {
+      res.status(400).json({ error: 'You are a bot!' });
+      return;
+    }
     const emailRes = await transporter.sendMail({
       from: email,
       to: 'shubhamku044@gmail.com',
@@ -30,3 +36,15 @@ export default async (req, res) => {
   }
   res.status(200).json(req.body);
 };
+
+async function validateHuman(token) {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  const response = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
+    {
+      method: 'POST',
+    }
+  );
+  const data = await response.json();
+  return data.success;
+}

@@ -1,7 +1,8 @@
 import styles from '../styles/components/contact.module.scss';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState, createRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { NextPage } from 'next';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 type FormValues = {
   name: string;
@@ -18,6 +19,7 @@ const Contact: NextPage = () => {
     formState: { errors },
     reset,
   } = useForm<FormValues>();
+  const reRef = useRef<ReCAPTCHA>();
 
   const [sending, setSending] = useState<boolean>(false);
   const [mailReceived, setMailReceived] = useState<boolean>(false);
@@ -25,9 +27,12 @@ const Contact: NextPage = () => {
   const onSubmit = async (data) => {
     setSending(true);
     try {
+      const token = await reRef.current.executeAsync();
+      reRef.current.reset();
+
       const response = await fetch(`/api/contact`, {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, token }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -70,6 +75,11 @@ const Contact: NextPage = () => {
               Message received! Thanks!
             </div>
           )}
+          <ReCAPTCHA
+            sitekey={'6LfKphAiAAAAADaSy0ITs-N4OLwKgP14Xsa1BHoT'}
+            size="invisible"
+            ref={reRef}
+          />
           <div className={styles['container__box-form-container-1']}>
             <div className={styles['container__box-form-container']}>
               <label htmlFor="name">
