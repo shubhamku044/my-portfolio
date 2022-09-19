@@ -4,8 +4,9 @@ import { navBarState } from '../../atoms/navbarState';
 import { useRecoilState } from 'recoil';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import type { NextPage } from 'next';
 
-const Header = () => {
+const Header: NextPage = () => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
   const [position, setPosition] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);

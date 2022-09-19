@@ -1,21 +1,34 @@
 import styles from '../styles/components/contact.module.scss';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, createRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import type { NextPage } from 'next';
 
-const Contact = () => {
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+};
+
+const Contact: NextPage = () => {
+  const [email, setEmail] = useState<string>('');
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<FormValues>();
 
-  const [sending, setSending] = useState(false);
-  const [mailReceived, setMailReceived] = useState(false);
+  const [sending, setSending] = useState<boolean>(false);
+  const [mailReceived, setMailReceived] = useState<boolean>(false);
+
+  const recaptchaRef = createRef();
 
   const onSubmit = async (data) => {
     setSending(true);
     try {
+      recaptchaRef.current.execute();
       const response = await fetch(`/api/contact`, {
         method: 'POST',
         body: JSON.stringify(data),
@@ -34,6 +47,39 @@ const Contact = () => {
     }
 
     setSending(false);
+  };
+
+  const onReCAPTCHAChange = async (captchaCode) => {
+    // If the reCAPTCHA code is null or undefined indicating that
+    // the reCAPTCHA was expired then return early
+    if (!captchaCode) {
+      return;
+    }
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        body: JSON.stringify({ email, captcha: captchaCode }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        // If the response is ok than show the success alert
+        alert('Email registered successfully');
+      } else {
+        // Else throw an error with the message returned
+        // from the API
+        const error = await response.json();
+        throw new Error(error.message);
+      }
+    } catch (error) {
+      alert(error?.message || 'Something went wrong');
+    } finally {
+      // Reset the reCAPTCHA when the request has failed or succeeeded
+      // so that it can be executed again if user submits another email.
+      recaptchaRef.current.reset();
+      setEmail('');
+    }
   };
 
   useEffect(() => {
@@ -56,6 +102,12 @@ const Contact = () => {
           action=""
           className={styles['container__box-form']}
         >
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.RECAPTCHA_SITE_KEY}
+            size="invisible"
+            onChange={onReCAPTCHAChange}
+          />
           {mailReceived && (
             <div className={styles['container__box-success']}>
               Message received! Thanks!
@@ -146,7 +198,7 @@ const Contact = () => {
               })}
               name="message"
               id="message"
-              rows="8"
+              rows={8}
               autoComplete="off"
               style={{
                 minHeight: '14rem',
@@ -162,11 +214,13 @@ const Contact = () => {
               sending
                 ? {
                     cursor: 'not-allowed',
-                    backgroundOpacity: '.7',
+                    // @ts-ignore
+                    backgroundOpacity: '0.7',
                   }
                 : {}
             }
             disabled={sending && true}
+            // @ts-ignore
             onSubmit={handleSubmit}
           >
             {sending ? 'Sending...' : 'Send Message'}

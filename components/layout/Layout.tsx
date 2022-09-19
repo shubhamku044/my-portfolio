@@ -6,12 +6,17 @@ import { navBarState } from '../../atoms/navbarState';
 import SideNav from './SideNav';
 import Social from './Social';
 import Mail from './Mail';
+import type { NextPage } from 'next';
 
 const Header = dynamic(() => import('./Header'), {
   ssr: false,
 });
 
-const Layout = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout: NextPage<Props> = ({ children }) => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
 
   return (

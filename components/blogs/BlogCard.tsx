@@ -1,10 +1,33 @@
 import styles from '../../styles/components/blog/BlogCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import type { NextPage } from 'next';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
-const BlogCard = ({ title, brief, id, coverImage, slug }) => {
-  const truncate = (para, limit) => `${para.substring(0, limit)}...`;
+interface Props {
+  title: string;
+  brief: string;
+  id: number;
+  coverImage: string;
+  slug: string;
+}
+
+const BlogCard: NextPage<Props> = ({ title, brief, id, coverImage, slug }) => {
+  const truncate = (para: string, limit: number) =>
+    `${para.substring(0, limit)}...`;
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect((): void => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
 
   return (
     <motion.div
@@ -13,6 +36,7 @@ const BlogCard = ({ title, brief, id, coverImage, slug }) => {
       transition={{ duration: 0.3, delay: 1.1 }}
       key={id}
       className={styles.container}
+      ref={ref}
     >
       <div className={styles.container__image}>
         <Image src={coverImage} layout="fill" />

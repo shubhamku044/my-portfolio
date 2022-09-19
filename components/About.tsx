@@ -1,7 +1,8 @@
 import styles from '../styles/components/about.module.scss';
 import Image from 'next/image';
+import type { NextPage } from 'next';
 
-const About = () => {
+const About: NextPage = () => {
   return (
     <section className={styles.container} id="about">
       <h2 className={styles['container__heading']}>About Me</h2>

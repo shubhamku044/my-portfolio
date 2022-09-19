@@ -1,8 +1,9 @@
-import styles from '../styles/components/hero.module.scss';
+import styles from '@styles/components/hero.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import type { NextPage } from 'next';
 
-const Hero = () => {
+const Hero: NextPage = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.hero__container}>

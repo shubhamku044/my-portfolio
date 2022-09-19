@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import styles from '../../styles/layout/Gmail.module.scss';
 import { motion } from 'framer-motion';
+import type { NextPage } from 'next';
 
-const Mail = () => {
+const Mail: NextPage = () => {
   return (
     <div className={styles.container}>
       <div>
