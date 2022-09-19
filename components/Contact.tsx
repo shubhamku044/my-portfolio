@@ -1,24 +1,38 @@
 import styles from '../styles/components/contact.module.scss';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { NextPage } from 'next';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-const Contact = () => {
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+};
+
+const Contact: NextPage = () => {
+  const [email, setEmail] = useState<string>('');
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<FormValues>();
+  const reRef = useRef<ReCAPTCHA>();
 
-  const [sending, setSending] = useState(false);
-  const [mailReceived, setMailReceived] = useState(false);
+  const [sending, setSending] = useState<boolean>(false);
+  const [mailReceived, setMailReceived] = useState<boolean>(false);
 
   const onSubmit = async (data) => {
     setSending(true);
     try {
+      const token = await reRef.current.executeAsync();
+      reRef.current.reset();
+
       const response = await fetch(`/api/contact`, {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, token }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -61,6 +75,11 @@ const Contact = () => {
               Message received! Thanks!
             </div>
           )}
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            size="invisible"
+            ref={reRef}
+          />
           <div className={styles['container__box-form-container-1']}>
             <div className={styles['container__box-form-container']}>
               <label htmlFor="name">
@@ -146,7 +165,7 @@ const Contact = () => {
               })}
               name="message"
               id="message"
-              rows="8"
+              rows={8}
               autoComplete="off"
               style={{
                 minHeight: '14rem',
@@ -162,11 +181,13 @@ const Contact = () => {
               sending
                 ? {
                     cursor: 'not-allowed',
-                    backgroundOpacity: '.7',
+                    // @ts-ignore
+                    backgroundOpacity: '0.7',
                   }
                 : {}
             }
             disabled={sending && true}
+            // @ts-ignore
             onSubmit={handleSubmit}
           >
             {sending ? 'Sending...' : 'Send Message'}

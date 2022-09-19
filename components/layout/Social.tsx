@@ -2,8 +2,9 @@ import styles from '../../styles/layout/Socials.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import type { NextPage } from 'next';
 
-const Social = () => {
+const Social: NextPage = () => {
   return (
     <div className={styles.container}>
       <div>
@@ -14,12 +15,7 @@ const Social = () => {
             transition={{ duration: 0.3, delay: 1.7 }}
           >
             <Link href="https://github.com/shubhamku044">
-              <a
-                target={'_blank'}
-                initial={{ translateY: 20, opacity: 0 }}
-                animate={{ translateY: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: 1.3 }}
-              >
+              <a target={'_blank'}>
                 <Image
                   src="/icons/github.svg"
                   objectFit="contain"

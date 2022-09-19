@@ -1,7 +1,8 @@
 import styles from '../../styles/layout/Footer.module.scss';
 import Link from 'next/link';
+import type { NextPage } from 'next';
 
-const Footer = () => {
+const Footer: NextPage = () => {
   return (
     <footer className={styles.container}>
       <div className={styles.container__footer}>

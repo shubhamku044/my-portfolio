@@ -2,8 +2,9 @@ import { navBarState } from '../../atoms/navbarState';
 import { useRecoilState } from 'recoil';
 import styles from '../../styles/layout/SideNav.module.scss';
 import Link from 'next/link';
+import type { NextPage } from 'next';
 
-const SideNav = () => {
+const SideNav: NextPage = () => {
   const [openNav, setOpenNav] = useRecoilState(navBarState);
 
   return (
