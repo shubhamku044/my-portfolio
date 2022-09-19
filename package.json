@@ -13,6 +13,7 @@
     "framer-motion": "^6.2.8",
     "graphql": "^16.6.0",
     "next": "latest",
+    "nextjs-progressbar": "^0.0.14",
     "node-fetch": "^3.2.10",
     "nodemailer": "^6.7.8",
     "react": "^17.0.2",
