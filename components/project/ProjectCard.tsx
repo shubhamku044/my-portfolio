@@ -1,6 +1,6 @@
 import styles from '@styles/components/projects/projectCard.module.scss';
 import type { NextPage } from 'next';
-import Image from 'next/image';
+import Image from 'next/future/image';
 
 const ProjectCard: NextPage = () => {
   return (
@@ -9,7 +9,9 @@ const ProjectCard: NextPage = () => {
         src={'/yaelabs.gif'}
         width={800}
         height={500}
-        objectFit={'contain'}
+        // objectFit={'contain'}
+        loading={'lazy'}
+        alt={'Yaelabs'}
       />
     </div>
   );
