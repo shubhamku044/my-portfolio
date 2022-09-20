@@ -9,7 +9,6 @@ const ProjectCard: NextPage = () => {
         src={'/yaelabs.gif'}
         width={800}
         height={500}
-        // objectFit={'contain'}
         loading={'lazy'}
         alt={'Yaelabs'}
       />
