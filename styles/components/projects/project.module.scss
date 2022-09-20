@@ -34,11 +34,16 @@
   }
 
   &__box {
+    display: grid;
     margin-top: 2rem;
     color: $color-gray;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 
-    @include sm {
-      margin-top: 2.4rem;
+    & > div {
+      &:nth-child(1) {
+        background-color: red;
+      }
     }
   }
 }

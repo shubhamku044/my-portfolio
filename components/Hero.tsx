@@ -37,10 +37,10 @@ const Hero: NextPage = () => {
             transition={{ duration: 0.3, delay: 1.5 }}
           >
             I am Shubham Sharma, a freelance full stack developer based in India
-            with a passion of building amazing things. I have about 2+ years of
+            with a passion for building amazing things. I have about 2+ years of
             experience in developing web applications using different
             technologies. I always keep updating myself with the latest and
-            cutting edge technologies.
+            cutting-edge technologies.
           </motion.p>
         </div>
         <motion.div

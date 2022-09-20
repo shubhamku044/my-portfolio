@@ -42,7 +42,7 @@ const BlogCard: NextPage<Props> = ({ title, brief, id, coverImage, slug }) => {
         <Image src={coverImage} layout="fill" />
       </div>
       <div className={styles.container__text}>
-        <h2>{truncate(title, 48)}</h2>
+        <h2>{truncate(title, 22)}</h2>
         <p>{truncate(brief, 120)}</p>
         <Link href={`https://shubhamku044.hashnode.dev/${slug}`}>
           <a target={'_blank'}>Read Article &rarr;</a>
