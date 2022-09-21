@@ -40,16 +40,20 @@ const ProjectCard: NextPage<ProjectDetailProps> = ({
           <div className={styles['container__desc-header']}>
             <h2 className={styles['container__desc-header-title']}>{name}</h2>
             <div className={styles['container__desc-header-links']}>
-              <Link href={githubUrl}>
-                <a target={'_blank'}>
-                  <AiFillGithub />
-                </a>
-              </Link>
-              <Link href={liveUrl}>
-                <a target={'_blank'}>
-                  <FiExternalLink />
-                </a>
-              </Link>
+              {githubUrl && (
+                <Link href={githubUrl}>
+                  <a target={'_blank'}>
+                    <AiFillGithub />
+                  </a>
+                </Link>
+              )}
+              {liveUrl && (
+                <Link href={liveUrl}>
+                  <a target={'_blank'}>
+                    <FiExternalLink />
+                  </a>
+                </Link>
+              )}
             </div>
           </div>
           <p className={styles['container__desc-content']}>{description}</p>
