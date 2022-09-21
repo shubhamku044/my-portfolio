@@ -1,0 +1,59 @@
+@import '@styles/abstracts/breakpoints';
+
+.container {
+  background-color: #ffd369;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #222831;
+  border-radius: 4px;
+  position: relative;
+  padding: 1rem 0.6rem;
+
+  @include sm {
+    padding: 1.2rem 1rem;
+  }
+
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 16rem;
+
+    @include sm {
+      height: 22rem;
+    }
+
+    @include lg {
+      height: 28rem;
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 32, 39, 0.2),
+      rgba(15, 32, 39, 0.6),
+      rgba(15, 32, 39)
+    );
+  }
+}
