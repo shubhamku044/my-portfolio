@@ -96,11 +96,7 @@ const Header: NextPage = () => {
               transition={{ duration: 0.3, delay: 0.5 }}
               className={styles['container__main-button']}
             >
-              <Link
-                href={
-                  'https://drive.google.com/file/d/1NVOeSB7wSZCwt1ONXeiCE8jHg2C3R8Rg/view?usp=sharing'
-                }
-              >
+              <Link href={'/Resume.pdf'}>
                 <a target={'_blank'}>Resume</a>
               </Link>
             </motion.div>

@@ -13,7 +13,7 @@ export const ProjectDetails: ProjectDetailProps[] = [
     id: 1,
     name: 'Yaelabs',
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      'Founded in May 2022, Yae Labs is a Web3 x Metaverse x Anime startup based in Japan.',
     liveUrl: 'https://yaelabs.com/',
     githubUrl: null,
     imageUrl: '/yaelabs.gif',
@@ -23,6 +23,7 @@ export const ProjectDetails: ProjectDetailProps[] = [
       'TailwindCSS',
       'Figma',
       'Framer Motion',
+      'i-18n',
       'React',
       'SCSS',
     ],
@@ -31,7 +32,7 @@ export const ProjectDetails: ProjectDetailProps[] = [
     id: 2,
     name: 'Crypto Sardars',
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      'CryptoSardars - Club is a first ever NFT collection of 4444 unique digital Sardars, where each Sardar is living on the Polygon Chain as ERC-721 token.',
     liveUrl: 'https://www.cryptosardars.com/',
     githubUrl: null,
     imageUrl: '/cryptoSardars.gif',
@@ -41,7 +42,7 @@ export const ProjectDetails: ProjectDetailProps[] = [
     id: 3,
     name: 'Airbnb Clone',
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      "Airbnb Clone is a full-stack web application built with Next.js, TailwindCSS, Mapbox, and Firebase. It's a clone of the Airbnb website.",
     liveUrl: 'https://airbnb-clone-fg7i1ufza-shubhamku044.vercel.app/',
     githubUrl: 'https://github.com/shubhamku044/airbnb-clone',
     imageUrl: '/airbnbClone.gif',
