@@ -118,6 +118,21 @@
           border-radius: 6px;
         }
       }
+
+      &-socials {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include md {
+          display: none;
+        }
+
+        & > *:not(:last-child) {
+          margin-right: 0.8rem;
+        }
+      }
     }
   }
 }
