@@ -15,19 +15,9 @@
     padding: 1.2rem 1rem;
   }
 
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0f2027;
+  background: -webkit-linear-gradient(to left, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
 
   &__img {
     position: relative;
@@ -55,5 +45,65 @@
       rgba(15, 32, 39, 0.6),
       rgba(15, 32, 39)
     );
+    display: flex;
+    align-items: flex-end;
+
+    & > div {
+      color: white;
+      background-color: rgba(15, 32, 39, 0.1);
+      backdrop-filter: blur(6px);
+      max-width: 32rem;
+      padding: 1rem 1.4rem;
+      @include sm {
+        padding: 2rem 2.4rem;
+      }
+
+      & > *:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+      }
+
+      &-links {
+        display: flex;
+
+        & > *:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        svg {
+          width: 28px;
+        }
+      }
+    }
+
+    &-content {
+      font-size: 0.9rem;
+      letter-spacing: 1.12px;
+      line-height: 1.2;
+    }
+
+    &-tools {
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      li {
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        letter-spacing: 1.12px;
+      }
+    }
   }
 }
