@@ -43,7 +43,7 @@ export const ProjectDetails: ProjectDetailProps[] = [
     name: 'Airbnb Clone',
     description:
       "Airbnb Clone is a full-stack web application built with Next.js, TailwindCSS, Mapbox, and Firebase. It's a clone of the Airbnb website.",
-    liveUrl: 'https://airbnb-clone-fg7i1ufza-shubhamku044.vercel.app/',
+    liveUrl: 'https://airbnb-clone-qua5437hy-shubhamku044.vercel.app/',
     githubUrl: 'https://github.com/shubhamku044/airbnb-clone',
     imageUrl: '/airbnbClone.gif',
     technologies: [
