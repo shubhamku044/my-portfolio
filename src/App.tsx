@@ -7,7 +7,7 @@ function App() {
     <div className="px-8 py-4">
       <Router>
         <Header />
-        <main className="mt-24">
+        <main className="max-w-3xl px-6 mx-auto mt-24">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />

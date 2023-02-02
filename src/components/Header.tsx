@@ -1,9 +1,10 @@
-import { Link, NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope,
 } from 'react-icons/bs';
+import { motion } from 'framer-motion';
 
 const styles = {
   rowEl: 'flex items-center',
@@ -16,8 +17,35 @@ enum ETheme {
   Light = 'light',
 }
 
+interface INavItem {
+  id: number;
+  name: string;
+  path: string;
+}
+
+const NavItems = [
+  {
+    id: 1,
+    name: 'Home',
+    path: '/',
+  },
+  {
+    id: 2,
+    name: 'Blogs',
+    path: '/blog',
+  },
+  {
+    id: 3,
+    name: 'Contact',
+    path: '/contact',
+  },
+];
+
 const Header = () => {
   const [theme, setTheme] = useState<ETheme>(ETheme.Dark);
+  const [currPath, setCurrPath] = useState<string>('/' || window.location.pathname); // [window.location.pathname]
+  const location = useLocation();
+  const audio = new Audio('/pop_sound_2.mp3');
 
   const toggleTheme = ():void => {
     if (theme === ETheme.Dark) {
@@ -37,6 +65,13 @@ const Header = () => {
     }
   }, [theme]);
 
+  useEffect(() => {
+    if (location.pathname !== currPath) {
+      audio.play();
+      setCurrPath(location.pathname);
+    }
+  }, [location]);
+
   return (
     <div className="max-w-3xl border-gray-400 dark:border-gray-800 border bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm fixed w-11/12 left-1/2 select-none -translate-x-1/2 px-4 py-3 rounded-md mx-auto flex justify-between items-center">
       <div className={`${styles.rowEl} space-x-5`}>
@@ -49,9 +84,22 @@ const Header = () => {
           }
         </div>
         <ul className={`${styles.rowEl} space-x-2`}>
-          <li><NavLink className={({ isActive }) => `${styles.navLink} ${isActive && styles.activeLink}`} to="/">Home</NavLink></li>
-          <li><NavLink className={({ isActive }) => `${styles.navLink} ${isActive && styles.activeLink}`} to="/blog">Blogs</NavLink></li>
-          <li><NavLink className={({ isActive }) => `${styles.navLink} ${isActive && styles.activeLink}`} to="/contact">Contact</NavLink></li>
+          {
+            NavItems.map((item: INavItem) => (
+              <li key={item.id}>
+                <NavLink
+                  className={({ isActive }) => `${styles.navLink} relative`}
+                  to={item.path}
+                >
+                  <span className="z-10 relative">{item.name}</span>
+                  {currPath === item.path && (
+                    <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
+                  )}
+                </NavLink>
+
+              </li>
+            ))
+          }
         </ul>
       </div>
       <div>
