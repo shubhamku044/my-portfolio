@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white min-h-[200vh];
+  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white;
 }

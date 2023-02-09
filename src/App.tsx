@@ -4,10 +4,10 @@ import { Home, Blog, Contact } from './pages';
 
 function App() {
   return (
-    <div className="px-8 py-4">
+    <div className="px-4 py-4">
       <Router>
         <Header />
-        <main className="max-w-3xl px-6 mx-auto mt-24">
+        <main className="max-w-3xl px-6 mx-auto mt-24 min-h-[90vh]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
