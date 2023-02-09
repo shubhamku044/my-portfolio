@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components';
+import { Footer, Header } from './components';
 import { Home, Blog, Contact } from './pages';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           </Routes>
         </main>
       </Router>
+      <Footer />
     </div>
   );
 }
