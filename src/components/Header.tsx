@@ -4,6 +4,7 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope,
 } from 'react-icons/bs';
+import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 const styles = {
@@ -44,6 +45,7 @@ const NavItems = [
 const Header = () => {
   const [theme, setTheme] = useState<ETheme>(ETheme.Dark);
   const [currPath, setCurrPath] = useState<string>('/' || window.location.pathname); // [window.location.pathname]
+  const [navOpen, setNavOpen] = useState<boolean>(false);
   const location = useLocation();
   const audio = new Audio('/pop_sound_2.mp3');
 
@@ -67,66 +69,117 @@ const Header = () => {
 
   useEffect(() => {
     if (location.pathname !== currPath) {
+      audio.volume = 0.4;
+      audio.currentTime = 0.31;
       audio.play();
       setCurrPath(location.pathname);
     }
   }, [location]);
 
   return (
-    <div className="max-w-3xl border-gray-400 dark:border-gray-800 border bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm fixed w-11/12 left-1/2 select-none -translate-x-1/2 px-4 py-3 rounded-md mx-auto flex justify-between items-center">
-      <div className={`${styles.rowEl} space-x-5`}>
-        <div
-          className="hover:bg-gray-200 dark:hover:bg-gray-800 p-2 duration-300 transition-all ease-out rounded-md cursor-pointer"
-          onClick={toggleTheme}
-        >
+    <>
+      <div className="max-w-3xl sm:border-gray-400 dark:border-gray-800 border-b sm:border bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm fixed w-full sm:w-11/12 left-1/2 top-0 sm:top-auto select-none -translate-x-1/2 px-4 py-3 sm:rounded-md mx-auto flex justify-between items-center">
+        <div className={`${styles.rowEl} space-x-5`}>
+          <div
+            className="hover:bg-gray-200 dark:hover:bg-gray-800 p-2 duration-300 transition-all ease-out rounded-md cursor-pointer"
+            onClick={toggleTheme}
+          >
+            {
+              theme === ETheme.Light ? <FiMoon className="w-4 h-4" /> : <FiSun className="w-4 h-4"/>
+            }
+          </div>
+          <ul className={`${styles.rowEl} hidden sm:flex space-x-2`}>
+            {
+              NavItems.map((item: INavItem) => (
+                <li key={item.id}>
+                  <NavLink
+                    className={`${styles.navLink} relative`}
+                    to={item.path}
+                  >
+                    <span className="z-10 relative">{item.name}</span>
+                    {currPath === item.path && (
+                      <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
+                    )}
+                  </NavLink>
+
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <ul className={`${styles.rowEl} hidden sm:flex space-x-4`}>
+            <li>
+              <a href="#">
+                <BsGithub className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsTwitter className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsLinkedin className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsEnvelope className="w-6 h-6" />
+              </a>
+            </li>
+          </ul>
           {
-            theme === ETheme.Light ? <FiMoon className="w-4 h-4" /> : <FiSun className="w-4 h-4"/>
+            !navOpen ? (
+              <HiMenuAlt3 className="w-8 h-8 sm:hidden cursor-pointer" onClick={() => setNavOpen((prv) => !prv)} />
+            ) : (
+              <HiOutlineX className="w-8 h-8 sm:hidden cursor-pointer" onClick={() => setNavOpen((prv) => !prv)} />
+            )
           }
         </div>
-        <ul className={`${styles.rowEl} space-x-2`}>
-          {
-            NavItems.map((item: INavItem) => (
-              <li key={item.id}>
-                <NavLink
-                  className={({ isActive }) => `${styles.navLink} relative`}
-                  to={item.path}
-                >
-                  <span className="z-10 relative">{item.name}</span>
-                  {currPath === item.path && (
-                    <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
-                  )}
-                </NavLink>
-
-              </li>
-            ))
-          }
-        </ul>
       </div>
-      <div>
-        <ul className={`${styles.rowEl} space-x-4`}>
-          <li>
-            <a href="#">
-              <BsGithub className="w-6 h-6" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <BsTwitter className="w-6 h-6" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <BsLinkedin className="w-6 h-6" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <BsEnvelope className="w-6 h-6" />
-            </a>
-          </li>
-        </ul>
+      <div className={`${!navOpen ? 'hidden' : 'block'} sm:hidden fixed top-[58px] left-0 w-full h-64 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm z-10`}>
+        <div className="flex flex-col items-center justify-center h-full">
+          <ul className="flex flex-col space-y-4 items-center">
+            {
+              NavItems.map((item: INavItem) => (
+                <li key={item.id}>
+                  <NavLink
+                    className={({ isActive }) => (`${styles.navLink} ${isActive && styles.activeLink}`)}
+                    to={item.path}
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))
+            }
+          </ul>
+          <ul className="flex space-x-4 mt-4">
+            <li>
+              <a href="#">
+                <BsGithub className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsTwitter className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsLinkedin className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BsEnvelope className="w-6 h-6" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
