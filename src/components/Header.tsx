@@ -6,6 +6,8 @@ import {
 } from 'react-icons/bs';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const styles = {
   rowEl: 'flex items-center',
@@ -69,8 +71,8 @@ const Header = () => {
 
   useEffect(() => {
     if (location.pathname !== currPath) {
-      audio.volume = 0.4;
       audio.currentTime = 0.31;
+      audio.volume = 0.3;
       audio.play();
       setCurrPath(location.pathname);
     }
@@ -110,24 +112,32 @@ const Header = () => {
         <div>
           <ul className={`${styles.rowEl} hidden sm:flex space-x-4`}>
             <li>
-              <a href="#">
-                <BsGithub className="w-6 h-6" />
-              </a>
+              <Tippy arrow content={<span>Github</span>}>
+                <a href="#">
+                  <BsGithub className="w-6 h-6" />
+                </a>
+              </Tippy>
             </li>
             <li>
-              <a href="#">
-                <BsTwitter className="w-6 h-6" />
-              </a>
+              <Tippy arrow content={<span>Tiwtter</span>}>
+                <a href="#">
+                  <BsTwitter className="w-6 h-6" />
+                </a>
+              </Tippy>
             </li>
             <li>
-              <a href="#">
-                <BsLinkedin className="w-6 h-6" />
-              </a>
+              <Tippy arrow content={<span>LinkedIn</span>}>
+                <a href="#">
+                  <BsLinkedin className="w-6 h-6" />
+                </a>
+              </Tippy>
             </li>
             <li>
-              <a href="#">
-                <BsEnvelope className="w-6 h-6" />
-              </a>
+              <Tippy arrow content={<span>Email</span>}>
+                <a href="#">
+                  <BsEnvelope className="w-6 h-6" />
+                </a>
+              </Tippy>
             </li>
           </ul>
           {

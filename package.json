@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tippyjs/react": "^4.2.6",
     "eslint-config-airbnb-base": "^15.0.0",
     "framer-motion": "^9.0.1",
     "react": "^18.2.0",

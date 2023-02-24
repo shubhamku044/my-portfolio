@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white;
+  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white h-full overflow-auto;
+  webkit-overflow-scrolling: touch;
+}
+
+html {
+  @apply h-full w-full overflow-hidden;
 }
