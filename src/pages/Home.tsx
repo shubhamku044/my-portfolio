@@ -1,4 +1,4 @@
-import React, { ReactEl } from 'react';
+import React, { ReactNode } from 'react';
 import {
   SiTypescript,
   SiJavascript,
@@ -24,7 +24,7 @@ import ProjectCard from '../components/ProjectCard';
 
 interface ITechStack {
   name: string;
-  icon: ReactEl;
+  icon: ReactNode;
 }
 
 const techStack: ITechStack[] = [
