@@ -144,7 +144,7 @@ const Home = () => (
             description='A discord bot I created for my friends and I to use in our discord server.'
             githubLink=''
             liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' />, <SiTailwindcss className='h-5 w-5' />]}
+            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
           />
         </li>
         <li>
@@ -153,7 +153,7 @@ const Home = () => (
             description='A discord bot I created for my friends and I to use in our discord server.'
             githubLink=''
             liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' />, <SiTailwindcss className='h-5 w-5' />]}
+            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
           />
         </li>
         <li>
@@ -162,7 +162,7 @@ const Home = () => (
             description='A discord bot I created for my friends and I to use in our discord server.'
             githubLink=''
             liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' />, <SiTailwindcss className='h-5 w-5' />]}
+            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
           />
         </li>
       </ul>

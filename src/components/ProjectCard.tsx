@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { BsStar } from 'react-icons/bs';
 import { VscRepoForked } from 'react-icons/vsc';
 
 interface ProjectCardProps {
   name: string;
   description: string;
-  techStack: Element[];
+  // techStack: React.ElementType<any>[];
+  techStack: ReactNode[];
   githubLink: string;
   liveLink?: string;
 }
@@ -28,11 +29,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div className='mt-8 flex space-x-8 items-center justify-between'>
       <div className='flex space-x-8 items-center'>
         <div className='flex space-x-3'>
-          {techStack.map((tech, index) => (
-            <div key={index}>
-              {tech}
-            </div>
-          ))}
+          {techStack.map((tech, index) => {
+            const techEl = tech as ReactNode;
+            return (
+              <div key={index}>
+                {techEl}
+              </div>
+            );
+          })}
         </div>
         <div className='flex space-x-4'>
           <div className='flex space-x-2 items-center'>
