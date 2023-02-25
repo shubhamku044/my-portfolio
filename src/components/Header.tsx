@@ -5,7 +5,7 @@ import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope,
 } from 'react-icons/bs';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
-import { motion } from 'framer-motion';
+import { AnimateSharedLayout, LayoutGroup, motion } from 'framer-motion';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -26,7 +26,7 @@ interface INavItem {
   path: string;
 }
 
-const NavItems = [
+const navItems = [
   {
     id: 1,
     name: 'Home',
@@ -91,22 +91,23 @@ const Header = () => {
             }
           </div>
           <ul className={`${styles.rowEl} hidden sm:flex space-x-2`}>
-            {
-              NavItems.map((item: INavItem) => (
-                <li key={item.id}>
-                  <NavLink
-                    className={`${styles.navLink} relative`}
-                    to={item.path}
-                  >
-                    <span className="z-10 relative">{item.name}</span>
-                    {currPath === item.path && (
-                      <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
-                    )}
-                  </NavLink>
-
-                </li>
-              ))
-            }
+            <LayoutGroup id='b'>
+              {
+                navItems.map((item: INavItem) => (
+                  <li key={item.id}>
+                    <NavLink
+                      className={`${styles.navLink} relative`}
+                      to={item.path}
+                    >
+                      <span className="z-10 relative">{item.name}</span>
+                      {currPath === item.path && (
+                        <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
+                      )}
+                    </NavLink>
+                  </li>
+                ))
+              }
+            </LayoutGroup>
           </ul>
         </div>
         <div>
@@ -153,7 +154,7 @@ const Header = () => {
         <div className="flex flex-col items-center justify-center h-full">
           <ul className="flex flex-col space-y-4 items-center">
             {
-              NavItems.map((item: INavItem) => (
+              navItems.map((item: INavItem) => (
                 <li key={item.id}>
                   <NavLink
                     className={({ isActive }) => (`${styles.navLink} ${isActive && styles.activeLink}`)}

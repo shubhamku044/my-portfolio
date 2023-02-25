@@ -21,6 +21,7 @@ import {
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import ProjectCard from '../components/ProjectCard';
+import { Experience } from '../components';
 
 interface ITechStack {
   name: string;
@@ -98,11 +99,16 @@ const techStack: ITechStack[] = [
   },
 ];
 
+const styles = {
+  subHeading: 'text-3xl font-semibold',
+  desc: 'text-gray-700 dark:text-gray-300',
+};
+
 const Home = () => (
   <div className='space-y-10'>
     <div className='space-y-4'>
       <h1 className='text-4xl font-bold'>Hey, I&apos;m Shubham 👋</h1>
-      <p className='text-gray-700 dark:text-gray-300'>
+      <p className={styles.desc}>
         I&apos;m a fullstack developer, mainly working with NodeJS applications.
         I like to work on discord bot&apos;s, using discord.js, or working on sites
         for myself, my friends or for a project I am working on! I mainly use TypeScript,
@@ -110,8 +116,8 @@ const Home = () => (
       </p>
     </div>
     <div className='space-y-4'>
-      <h4 className='text-3xl font-semibold'>Technologies 💻</h4>
-      <p className='text-gray-700 dark:text-gray-300'>
+      <h4 className={styles.subHeading}>Technologies 💻</h4>
+      <p className={styles.desc}>
         I use a variety of tools to streamline my development process and increase the quality of
         both my code, and my projects. Below is a list of technologies and languages I&apos;ve
         had experience with in the past, or use currently.
@@ -131,13 +137,13 @@ const Home = () => (
       </ul>
     </div>
     <div className='space-y-4'>
-      <h4 className='text-3xl font-semibold'>Projects 💻</h4>
-      <p className='text-gray-700 dark:text-gray-300'>
+      <h4 className='text-3xl font-semibold'>Projects 🛠️</h4>
+      <p className={styles.desc}>
         In my free time, I enjoy creating open source projects on GitHub, so I can learn from others
         and showcase what I know. In total, all of my open sourced projects have earnt me 10 stars
         on GitHub, and 4 forks. Below are some of my most popular repositories.
       </p>
-      <ul className='space-y-2'>
+      <ul className='grid grid-cols-1 md:grid-cols-2 gap-2'>
         <li>
           <ProjectCard
             name='Discord Bot'
@@ -166,6 +172,10 @@ const Home = () => (
           />
         </li>
       </ul>
+    </div>
+    <div className='space-y-4'>
+      <h4 className={styles.subHeading}>Experience 🏢</h4>
+      <Experience />
     </div>
   </div>
 );

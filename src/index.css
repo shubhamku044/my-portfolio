@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white h-full overflow-auto;
+  @apply bg-gradient-to-bl from-white to-[#fff] text-black dark:from-black dark:to-[#0d131f] dark:text-white h-full overflow-auto scrollbar scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-800;
   webkit-overflow-scrolling: touch;
 }
 

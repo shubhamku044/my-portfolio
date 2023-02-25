@@ -22,12 +22,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   >
     <div>
       <h3 className='font-bold text-lg'>{name}</h3>
-      <p className='max-w-[24rem] dark:text-gray-400'>
+      <p className='max-w-[24rem] text-sm dark:text-gray-400'>
         {description}
       </p>
     </div>
     <div className='mt-8 flex space-x-8 items-center justify-between'>
-      <div className='flex space-x-8 items-center'>
+      <div className='flex space-x-8 items-end'>
         <div className='flex space-x-3'>
           {techStack.map((tech, index) => {
             const techEl = tech as ReactNode;
@@ -38,14 +38,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             );
           })}
         </div>
-        <div className='flex space-x-4'>
-          <div className='flex space-x-2 items-center'>
+        <div className='flex space-x-4 text-sm dark:text-gray-300 font-light'>
+          <div className='flex items-center'>
             <BsStar className='h-4 w-4' />
-            <span className='ml-2'>69</span>
+            <span className='ml-1'>69</span>
           </div>
-          <div className='flex space-x-2 items-center'>
+          <div className='flex items-center'>
             <VscRepoForked className='h-4 w-4' />
-            <span className='ml-2'>69</span>
+            <span className='ml-1'>69</span>
           </div>
         </div>
       </div>
