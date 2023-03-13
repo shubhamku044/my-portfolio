@@ -27,12 +27,12 @@ const socialHandles: ISocialHandles[] = [
     icon: <SiHashnode className='h-5 w-5 text-gray-400 dark:text-gray-300' />,
     link: 'https://shubhamku044.hashnode.dev/',
   },
-  // {
-  //   id: 2,
-  //   title: 'Shubham Kumar',
-  //   icon: <FaDiscord className='h-5 w-5 text-gray-400 dark:text-gray-300' />,
-  //   link: 'https://discord.com/users/70800000000000000',
-  // },
+  /* {
+    id: 2,
+    title: 'Shubham Kumar',
+    icon: <FaDiscord className='h-5 w-5 text-gray-400 dark:text-gray-300' />,
+    link: 'https://discord.com/users/70800000000000000',
+  }, */
   {
     id: 3,
     title: 'Shubham Kumar',
