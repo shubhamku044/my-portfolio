@@ -10,7 +10,7 @@ interface ISocialHandleCard {
 const SocialHandleCard: React.FC<ISocialHandleCard> = ({
   title, link, icon,
 }) => {
-  const [cardEl, setCardEl] = useState<HTMLAnchorElement>(null);
+  const [cardEl, setCardEl] = useState<HTMLAnchorElement>();
   const cardRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -21,17 +21,17 @@ const SocialHandleCard: React.FC<ISocialHandleCard> = ({
     const {
       clientWidth: cardWidth,
       clientHeight: cardHeight,
-    } = cardEl;
+    } = cardEl as HTMLAnchorElement;
     const angle = 8;
 
     const y = ((e.nativeEvent.offsetX - cardWidth * 0.5) / cardWidth) * angle;
     const x = ((1 - (e.nativeEvent.offsetY - cardHeight * 0.5)) / cardHeight) * angle;
 
-    cardEl.style.transform = `perspective(400px) rotateX(${x}deg) rotateY(${y}deg)`;
+    (cardEl as HTMLAnchorElement).style.transform = `perspective(400px) rotateX(${x}deg) rotateY(${y}deg)`;
   };
 
   const resetStyle = () => {
-    cardEl.style.transform = '';
+    (cardEl as HTMLAnchorElement).style.transform = '';
   };
 
   return (
