@@ -68,9 +68,8 @@ const Contact = () => (
         creative ideas or opportunities to be part of your visions.
       </p>
     </div>
-    <div className='flex flex-col md:flex-row gap-2'>
+    <div className='flex flex-col-reverse md:flex-row gap-2'>
       <div className='border bg-gray-200/60 dark:bg-gray-900/60 rounded border-gray-400 dark:border-gray-800 flex-1'>
-
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2'>
         {

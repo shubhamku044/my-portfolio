@@ -22,7 +22,7 @@ const SocialHandleCard: React.FC<ISocialHandleCard> = ({
       clientWidth: cardWidth,
       clientHeight: cardHeight,
     } = cardEl as HTMLAnchorElement;
-    const angle = 8;
+    const angle = 14;
 
     const y = ((e.nativeEvent.offsetX - cardWidth * 0.5) / cardWidth) * angle;
     const x = ((1 - (e.nativeEvent.offsetY - cardHeight * 0.5)) / cardHeight) * angle;
