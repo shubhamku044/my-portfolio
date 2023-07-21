@@ -1,8 +1,13 @@
-import Header from './Header';
+import Navbar from './Navbar';
 import Footer from './Footer';
+import ProjectCard from './ProjectCard';
 import Experience from './Experience';
 import SocialHandleCard from './SocialHandleCard';
 
 export {
-  Header, Footer, Experience, SocialHandleCard,
+  Navbar,
+  Footer,
+  ProjectCard,
+  Experience,
+  SocialHandleCard,
 };
