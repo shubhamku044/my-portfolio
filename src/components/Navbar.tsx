@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope
@@ -8,6 +8,8 @@ import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import { AnimateSharedLayout, LayoutGroup, motion } from 'framer-motion';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const styles = {
   rowEl: 'flex items-center',
@@ -45,10 +47,10 @@ const navItems = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [theme, setTheme] = useState<ETheme>(ETheme.Dark);
-  const [currPath, setCurrPath] = useState<string>('/' || window.location.pathname); // [window.location.pathname]
+  const [currPath, setCurrPath] = useState<string>('/' || pathname);
   const [navOpen, setNavOpen] = useState<boolean>(false);
-  const audio = new Audio('/pop_sound_2.mp3');
 
   const toggleTheme = (): void => {
     if (theme === ETheme.Dark) {
@@ -69,13 +71,14 @@ const Header = () => {
   }, [theme]);
 
   useEffect(() => {
+    const audio = new Audio('/pop_sound_2.mp3');
     if (location.pathname !== currPath) {
       audio.currentTime = 0.31;
       audio.volume = 0.3;
       audio.play();
       setCurrPath(location.pathname);
     }
-  }, [location]);
+  }, [pathname, currPath]);
 
   return (
     <>
@@ -93,17 +96,18 @@ const Header = () => {
             <LayoutGroup id='b'>
               {
                 navItems.map((item: INavItem) => (
-                  <li key={item.id}>
-                    <div
-                      className={`${styles.navLink} relative`}
-                    // to={item.path}
-                    >
-                      <span className="z-10 relative">{item.name}</span>
-                      {currPath === item.path && (
-                        <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
-                      )}
-                    </div>
-                  </li>
+                  <Link onClick={() => { }} href={item.path} key={item.id}>
+                    <li key={item.id} className='cursor-pointer'>
+                      <div
+                        className={`${styles.navLink} relative`}
+                      >
+                        <span className="z-10 relative">{item.name}</span>
+                        {currPath === item.path && (
+                          <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
+                        )}
+                      </div>
+                    </li>
+                  </Link>
                 ))
               }
             </LayoutGroup>
