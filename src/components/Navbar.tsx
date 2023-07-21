@@ -49,7 +49,7 @@ const navItems = [
 const Header = () => {
   const pathname = usePathname();
   const [theme, setTheme] = useState<ETheme>(ETheme.Dark);
-  const [currPath, setCurrPath] = useState<string>('/' || pathname);
+  const [currPath, setCurrPath] = useState<string>(pathname);
   const [navOpen, setNavOpen] = useState<boolean>(false);
 
   const toggleTheme = (): void => {
