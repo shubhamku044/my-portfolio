@@ -79,11 +79,11 @@ export default function RootLayout({
           </iframe>
         </noscript> */}
         <div className='px-4 py-4'>
-          <Navbar />
+          {/* <Navbar /> */}
           <main className="max-w-3xl px-2 sm:px-10 mx-auto mt-24 mb-16 min-h-[90vh]">
             {children}
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </div>
         {/* <Script
           strategy="lazyOnload"
