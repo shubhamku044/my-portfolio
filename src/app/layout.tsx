@@ -60,7 +60,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body className={inter.className}>
-        {/* <Script
+        <Script
           id='gtm-script'
           strategy="lazyOnload">
           {`
@@ -77,7 +77,7 @@ export default function RootLayout({
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}>
           </iframe>
-        </noscript> */}
+        </noscript>
         <div className='px-4 py-4'>
           <Navbar />
           <main className="max-w-3xl px-2 sm:px-10 mx-auto mt-24 mb-16 min-h-[90vh]">
@@ -85,7 +85,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
-        {/* <Script
+        <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
         />
@@ -98,7 +98,7 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'G-HF2NQPTQ7W');
           `}
-        </Script> */}
+        </Script>
       </body>
     </html>
   );
