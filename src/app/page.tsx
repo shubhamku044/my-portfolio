@@ -127,11 +127,11 @@ const Home = () => (
         {
           techStack.map(({ icon, name }, index) => (
             <li key={index}>
-              <Tippy arrow content={<span>{name}</span>}>
+              {/* <Tippy arrow content={<span>{name}</span>}>
                 <span>
                   {icon}
                 </span>
-              </Tippy>
+              </Tippy> */}
             </li>
           ))
         }
