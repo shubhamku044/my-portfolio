@@ -116,32 +116,32 @@ const Header = () => {
         <div>
           <ul className={`${styles.rowEl} hidden sm:flex space-x-4`}>
             <li>
-              <Tippy arrow content={<span>Github</span>}>
+              {/* <Tippy arrow content={<span>Github</span>}>
                 <a href="#">
                   <BsGithub className="w-6 h-6" />
                 </a>
-              </Tippy>
+              </Tippy> */}
             </li>
             <li>
-              <Tippy arrow content={<span>Tiwtter</span>}>
+              {/* <Tippy arrow content={<span>Tiwtter</span>}>
                 <a href="#">
                   <BsTwitter className="w-6 h-6" />
                 </a>
-              </Tippy>
+              </Tippy> */}
             </li>
             <li>
-              <Tippy arrow content={<span>LinkedIn</span>}>
+              {/* <Tippy arrow content={<span>LinkedIn</span>}>
                 <a href="#">
                   <BsLinkedin className="w-6 h-6" />
                 </a>
-              </Tippy>
+              </Tippy> */}
             </li>
             <li>
-              <Tippy arrow content={<span>Email</span>}>
+              {/* <Tippy arrow content={<span>Email</span>}>
                 <a href="#">
                   <BsEnvelope className="w-6 h-6" />
                 </a>
-              </Tippy>
+              </Tippy> */}
             </li>
           </ul>
           {
