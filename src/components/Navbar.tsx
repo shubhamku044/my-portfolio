@@ -12,7 +12,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const styles = {
-  rowEl: 'flex items-center',
   navLink: 'px-4 py-2 text-sm rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 pointer transition-all ease-out duration-300',
   activeLink: 'bg-gray-300 dark:bg-gray-700'
 };
@@ -83,7 +82,7 @@ const Header = () => {
   return (
     <>
       <div className="max-w-3xl sm:border-gray-400 dark:border-gray-800 border-b sm:border bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm fixed w-full sm:w-11/12 left-1/2 top-0 sm:top-auto select-none -translate-x-1/2 px-4 py-3 sm:rounded-md mx-auto flex justify-between items-center">
-        <div className={`${styles.rowEl} space-x-5`}>
+        <div className={`flex items-center space-x-5`}>
           <div
             className="hover:bg-gray-200 dark:hover:bg-gray-800 p-2 duration-300 transition-all ease-out rounded-md cursor-pointer"
             onClick={toggleTheme}
@@ -92,7 +91,7 @@ const Header = () => {
               theme === ETheme.Light ? <FiMoon className="w-4 h-4" /> : <FiSun className="w-4 h-4" />
             }
           </div>
-          <ul className={`${styles.rowEl} hidden sm:flex space-x-2`}>
+          <ul className={`items-center hidden sm:flex space-x-2`}>
             <LayoutGroup id='b'>
               {
                 navItems.map((item: INavItem) => (
@@ -114,7 +113,7 @@ const Header = () => {
           </ul>
         </div>
         <div>
-          <ul className={`${styles.rowEl} hidden sm:flex space-x-4`}>
+          <ul className={`items-center hidden sm:flex space-x-4`}>
             <li>
               {/* <Tippy arrow content={<span>Github</span>}>
                 <a href="#">

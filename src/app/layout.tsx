@@ -83,7 +83,7 @@ export default function RootLayout({
           <main className="max-w-3xl px-2 sm:px-10 mx-auto mt-24 mb-16 min-h-[90vh]">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
         {/* <Script
           strategy="lazyOnload"
