@@ -19,8 +19,6 @@ import {
   SiFigma,
   SiRust
 } from 'react-icons/si';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 import ProjectCard from '../components/ProjectCard';
 import { Experience } from '../components';
 
@@ -127,11 +125,9 @@ const Home = () => (
         {
           techStack.map(({ icon, name }, index) => (
             <li key={index}>
-              <Tippy arrow content={<span>{name}</span>}>
-                <span>
-                  {icon}
-                </span>
-              </Tippy>
+              <span>
+                {icon}
+              </span>
             </li>
           ))
         }

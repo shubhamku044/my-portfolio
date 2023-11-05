@@ -5,8 +5,6 @@ import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope
 } from 'react-icons/bs';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -114,32 +112,24 @@ const Header = () => {
         <div>
           <ul className={`hidden items-center space-x-8 sm:flex`}>
             <li>
-              <Tippy arrow content={<span>Github</span>}>
-                <a href="#">
-                  <BsGithub className="h-6 w-6" />
-                </a>
-              </Tippy>
+              <a href="#">
+                <BsGithub className="h-6 w-6" />
+              </a>
             </li>
             <li>
-              <Tippy arrow content={<span>Tiwtter</span>}>
-                <a href="#">
-                  <BsTwitter className="h-6 w-6" />
-                </a>
-              </Tippy>
+              <a href="#">
+                <BsTwitter className="h-6 w-6" />
+              </a>
             </li>
             <li>
-              <Tippy arrow content={<span>LinkedIn</span>}>
-                <a href="#">
-                  <BsLinkedin className="h-6 w-6" />
-                </a>
-              </Tippy>
+              <a href="#">
+                <BsLinkedin className="h-6 w-6" />
+              </a>
             </li>
             <li>
-              <Tippy arrow content={<span>Email</span>}>
-                <a href="#">
-                  <BsEnvelope className="h-6 w-6" />
-                </a>
-              </Tippy>
+              <a href="#">
+                <BsEnvelope className="h-6 w-6" />
+              </a>
             </li>
           </ul>
           {

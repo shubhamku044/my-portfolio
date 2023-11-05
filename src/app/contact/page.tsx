@@ -39,12 +39,6 @@ const socialHandles: ISocialHandles[] = [
     icon: <FaLinkedin className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
     link: 'https://www.linkedin.com/in/shubhamku044/',
   },
-  {
-    id: 4,
-    title: '+91 620-2217968',
-    icon: <FaWhatsapp className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
-    link: 'https://wa.me/916202217968',
-  },
   // {
   //   id: 5,
   //   title: '@shubhamku044',
