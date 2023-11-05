@@ -17,7 +17,7 @@ import {
   SiNpm,
   SiYarn,
   SiFigma,
-  SiGo,
+  SiRust
 } from 'react-icons/si';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -32,72 +32,72 @@ interface ITechStack {
 const techStack: ITechStack[] = [
   {
     name: 'TypeScript',
-    icon: <SiTypescript className='w-6 h-6' />,
+    icon: <SiTypescript className="h-6 w-6" />,
   },
   {
     name: 'JavaScript',
-    icon: <SiJavascript className='w-6 h-6' />,
+    icon: <SiJavascript className="h-6 w-6" />,
   },
   {
     name: 'NodeJS',
-    icon: <SiNodedotjs className='w-6 h-6' />,
+    icon: <SiNodedotjs className="h-6 w-6" />,
   },
   {
     name: 'React',
-    icon: <SiReact className='w-6 h-6' />,
+    icon: <SiReact className="h-6 w-6" />,
   },
   {
     name: 'NextJS',
-    icon: <SiNextdotjs className='w-6 h-6' />,
+    icon: <SiNextdotjs className="h-6 w-6" />,
+  },
+  {
+    name: 'Rust',
+    icon: <SiRust className="h-6 w-6" />,
   },
   {
     name: 'HTML',
-    icon: <SiHtml5 className='w-6 h-6' />,
+    icon: <SiHtml5 className="h-6 w-6" />,
   },
   {
     name: 'CSS',
-    icon: <SiCss3 className='w-6 h-6' />,
+    icon: <SiCss3 className="h-6 w-6" />,
   },
   {
     name: 'Sass',
-    icon: <SiSass className='w-6 h-6' />,
+    icon: <SiSass className="h-6 w-6" />,
   },
   {
     name: 'TailwindCSS',
-    icon: <SiTailwindcss className='w-6 h-6' />,
+    icon: <SiTailwindcss className="h-6 w-6" />,
   },
   {
     name: 'Git',
-    icon: <SiGit className='w-6 h-6' />,
+    icon: <SiGit className="h-6 w-6" />,
   },
   {
     name: 'GitHub',
-    icon: <SiGithub className='w-6 h-6' />,
+    icon: <SiGithub className="h-6 w-6" />,
   },
   {
     name: 'NPM',
-    icon: <SiNpm className='w-6 h-6' />,
+    icon: <SiNpm className="h-6 w-6" />,
   },
   {
     name: 'Yarn',
-    icon: <SiYarn className='w-6 h-6' />,
+    icon: <SiYarn className="h-6 w-6" />,
   },
   {
     name: 'Python',
-    icon: <SiPython className='w-6 h-6' />,
+    icon: <SiPython className="h-6 w-6" />,
   },
   {
     name: 'Figma',
-    icon: <SiFigma className='w-6 h-6' />,
+    icon: <SiFigma className="h-6 w-6" />,
   },
   {
     name: 'VS Code',
-    icon: <SiVisualstudiocode className='w-6 h-6' />,
-  },
-  {
-    name: 'Go',
-    icon: <SiGo className='w-6 h-6' />,
-  },
+    icon: <SiVisualstudiocode className="h-6 w-6" />,
+  }
 ];
 
 const styles = {
@@ -106,9 +106,9 @@ const styles = {
 };
 
 const Home = () => (
-  <div className='space-y-10'>
-    <div className='space-y-4'>
-      <h1 className='text-4xl font-bold'>Hey, I&apos;m Shubham 👋</h1>
+  <div className="space-y-10">
+    <div className="space-y-4">
+      <h1 className="text-4xl font-bold">Hey, I&apos;m Shubham 👋</h1>
       <p className={styles.desc}>
         I&apos;m a fullstack developer, mainly working with NodeJS applications.
         I like to work on discord bot&apos;s, using discord.js, or working on sites
@@ -116,65 +116,65 @@ const Home = () => (
         I have been using Lua more lately for another position I have within a gaming community.
       </p>
     </div>
-    <div className='space-y-4'>
+    <div className="space-y-4">
       <h4 className={styles.subHeading}>Technologies 💻</h4>
       <p className={styles.desc}>
         I use a variety of tools to streamline my development process and increase the quality of
         both my code, and my projects. Below is a list of technologies and languages I&apos;ve
         had experience with in the past, or use currently.
       </p>
-      <ul className='dark:border-gray-900 border-2 flex gap-3 sm:gap-5 w-full flex-wrap items-center justify-center p-2'>
+      <ul className="flex w-full flex-wrap items-center justify-center gap-3 border-2 p-2 dark:border-gray-900 sm:gap-5">
         {
           techStack.map(({ icon, name }, index) => (
             <li key={index}>
-              {/* <Tippy arrow content={<span>{name}</span>}>
+              <Tippy arrow content={<span>{name}</span>}>
                 <span>
                   {icon}
                 </span>
-              </Tippy> */}
+              </Tippy>
             </li>
           ))
         }
       </ul>
     </div>
-    <div className='space-y-4'>
-      <h4 className='text-3xl font-semibold'>Projects 🛠️</h4>
+    <div className="space-y-4">
+      <h4 className="text-3xl font-semibold">Projects 🛠️</h4>
       <p className={styles.desc}>
         In my free time, I enjoy creating open source projects on GitHub, so I can learn from others
         and showcase what I know. In total, all of my open sourced projects have earnt me 10 stars
         on GitHub, and 4 forks. Below are some of my most popular repositories.
       </p>
-      <ul className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+      <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
         <li>
           <ProjectCard
-            name='Discord Bot'
-            description='A discord bot I created for my friends and I to use in our discord server.'
-            githubLink=''
-            liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
+            name="Discord Bot"
+            description="A discord bot I created for my friends and I to use in our discord server."
+            githubLink=""
+            liveLink=""
+            techStack={[<SiTypescript className="h-5 w-5" key={1} />, <SiTailwindcss className="h-5 w-5" key={2} />]}
           />
         </li>
         <li>
           <ProjectCard
-            name='Discord Bot'
-            description='A discord bot I created for my friends and I to use in our discord server.'
-            githubLink=''
-            liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
+            name="Discord Bot"
+            description="A discord bot I created for my friends and I to use in our discord server."
+            githubLink=""
+            liveLink=""
+            techStack={[<SiTypescript className="h-5 w-5" key={1} />, <SiTailwindcss className="h-5 w-5" key={2} />]}
           />
         </li>
         <li>
           <ProjectCard
-            name='Discord Bot'
-            description='A discord bot I created for my friends and I to use in our discord server.'
-            githubLink=''
-            liveLink=''
-            techStack={[<SiTypescript className='h-5 w-5' key={1} />, <SiTailwindcss className='h-5 w-5' key={2} />]}
+            name="Discord Bot"
+            description="A discord bot I created for my friends and I to use in our discord server."
+            githubLink=""
+            liveLink=""
+            techStack={[<SiTypescript className="h-5 w-5" key={1} />, <SiTailwindcss className="h-5 w-5" key={2} />]}
           />
         </li>
       </ul>
     </div>
-    <div className='space-y-4'>
+    <div className="space-y-4">
       <h4 className={styles.subHeading}>Experience 🏢</h4>
       <Experience />
     </div>

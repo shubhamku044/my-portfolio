@@ -1,18 +1,17 @@
 'use client';
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import {
   BsGithub, BsTwitter, BsLinkedin, BsEnvelope
 } from 'react-icons/bs';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
-import { AnimateSharedLayout, LayoutGroup, motion } from 'framer-motion';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const styles = {
-  navLink: 'px-4 py-2 text-sm rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 pointer transition-all ease-out duration-300',
+  navLink: 'px-4 py-2 text-sm rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 pointer',
   activeLink: 'bg-gray-300 dark:bg-gray-700'
 };
 
@@ -33,11 +32,11 @@ const navItems = [
     name: 'Home',
     path: '/'
   },
-  {
-    id: 2,
-    name: 'Blogs',
-    path: '/blog'
-  },
+  // {
+  //   id: 2,
+  //   name: 'Blogs',
+  //   path: '/blog'
+  // },
   {
     id: 3,
     name: 'Contact',
@@ -81,114 +80,111 @@ const Header = () => {
 
   return (
     <>
-      <div className="max-w-3xl sm:border-gray-400 dark:border-gray-800 border-b sm:border bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm fixed w-full sm:w-11/12 left-1/2 top-0 sm:top-auto select-none -translate-x-1/2 px-4 py-3 sm:rounded-md mx-auto flex justify-between items-center">
+      <div className="fixed left-1/2 top-0 mx-auto flex w-full max-w-3xl -translate-x-1/2 select-none items-center justify-between border-b bg-gray-50/50 px-4 py-3 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/50 sm:top-auto sm:w-11/12 sm:rounded-md sm:border sm:border-gray-400">
         <div className={`flex items-center space-x-5`}>
           <div
-            className="hover:bg-gray-200 dark:hover:bg-gray-800 p-2 duration-300 transition-all ease-out rounded-md cursor-pointer"
+            className="cursor-pointer rounded-md p-2 transition-all duration-300 ease-out hover:bg-gray-200 dark:hover:bg-gray-800"
             onClick={toggleTheme}
           >
             {
-              theme === ETheme.Light ? <FiMoon className="w-4 h-4" /> : <FiSun className="w-4 h-4" />
+              theme === ETheme.Light ? <FiMoon className="h-4 w-4" /> : <FiSun className="h-4 w-4" />
             }
           </div>
-          <ul className={`items-center hidden sm:flex space-x-2`}>
-            <LayoutGroup id='b'>
-              {
-                navItems.map((item: INavItem) => (
-                  <Link onClick={() => { }} href={item.path} key={item.id}>
-                    <li key={item.id} className='cursor-pointer'>
-                      <div
-                        className={`${styles.navLink} relative`}
-                      >
-                        <span className="z-10 relative">{item.name}</span>
-                        {currPath === item.path && (
-                          <motion.div className={`absolute rounded-md top-0 left-0 h-full w-full ${styles.activeLink}`} layoutId='underline' />
-                        )}
-                      </div>
-                    </li>
-                  </Link>
-                ))
-              }
-            </LayoutGroup>
+          <ul className={`hidden items-center space-x-2 sm:flex`}>
+            {
+              navItems.map((item: INavItem) => (
+                <>
+                  <li key={item.id} className="cursor-pointer">
+                    <Link className={`${styles.navLink} relative`} href={item.path}>
+                      {currPath === item.path && (
+                        <div
+                          className={`absolute left-0 top-0 h-full w-full rounded-md ${styles.activeLink}`}
+                        />
+                      )}
+                      <span className="relative z-10">
+                        {item.name}
+                      </span>
+                    </Link>
+                  </li>
+                </>
+              ))
+            }
           </ul>
         </div>
         <div>
-          <ul className={`items-center hidden sm:flex space-x-4`}>
+          <ul className={`hidden items-center space-x-8 sm:flex`}>
             <li>
-              {/* <Tippy arrow content={<span>Github</span>}>
+              <Tippy arrow content={<span>Github</span>}>
                 <a href="#">
-                  <BsGithub className="w-6 h-6" />
+                  <BsGithub className="h-6 w-6" />
                 </a>
-              </Tippy> */}
+              </Tippy>
             </li>
             <li>
-              {/* <Tippy arrow content={<span>Tiwtter</span>}>
+              <Tippy arrow content={<span>Tiwtter</span>}>
                 <a href="#">
-                  <BsTwitter className="w-6 h-6" />
+                  <BsTwitter className="h-6 w-6" />
                 </a>
-              </Tippy> */}
+              </Tippy>
             </li>
             <li>
-              {/* <Tippy arrow content={<span>LinkedIn</span>}>
+              <Tippy arrow content={<span>LinkedIn</span>}>
                 <a href="#">
-                  <BsLinkedin className="w-6 h-6" />
+                  <BsLinkedin className="h-6 w-6" />
                 </a>
-              </Tippy> */}
+              </Tippy>
             </li>
             <li>
-              {/* <Tippy arrow content={<span>Email</span>}>
+              <Tippy arrow content={<span>Email</span>}>
                 <a href="#">
-                  <BsEnvelope className="w-6 h-6" />
+                  <BsEnvelope className="h-6 w-6" />
                 </a>
-              </Tippy> */}
+              </Tippy>
             </li>
           </ul>
           {
             !navOpen
               ? (
-                <HiMenuAlt3 className="w-8 h-8 sm:hidden cursor-pointer" onClick={() => { setNavOpen((prv) => !prv); }} />
+                <HiMenuAlt3 className="h-8 w-8 cursor-pointer sm:hidden" onClick={() => { setNavOpen((prv) => !prv); }} />
               )
               : (
-                <HiOutlineX className="w-8 h-8 sm:hidden cursor-pointer" onClick={() => { setNavOpen((prv) => !prv); }} />
+                <HiOutlineX className="h-8 w-8 cursor-pointer sm:hidden" onClick={() => { setNavOpen((prv) => !prv); }} />
               )
           }
         </div>
       </div>
-      <div className={`${!navOpen ? 'hidden' : 'block'} sm:hidden fixed top-[58px] left-0 w-full h-64 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm z-10`}>
-        <div className="flex flex-col items-center justify-center h-full">
-          <ul className="flex flex-col space-y-4 items-center">
+      <div className={`${!navOpen ? 'hidden' : 'block'} fixed left-0 top-[58px] z-10 h-64 w-full bg-gray-50/50 backdrop-blur-sm dark:bg-gray-900/50 sm:hidden`}>
+        <div className="flex h-full flex-col items-center justify-center">
+          <ul className="flex flex-col items-center space-y-4">
             {
               navItems.map((item: INavItem) => (
-                <li key={item.id}>
-                  <div
-                  // className={({ isActive }) => (`${styles.navLink} ${isActive && styles.activeLink}`)}
-                  // to={item.path}
-                  >
+                <li key={item.name}>
+                  <div>
                     {item.name}
                   </div>
                 </li>
               ))
             }
           </ul>
-          <ul className="flex space-x-4 mt-4">
+          <ul className="mt-4 flex space-x-4">
             <li>
               <a href="#">
-                <BsGithub className="w-6 h-6" />
+                <BsGithub className="h-6 w-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsTwitter className="w-6 h-6" />
+                <BsTwitter className="h-6 w-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsLinkedin className="w-6 h-6" />
+                <BsLinkedin className="h-6 w-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsEnvelope className="w-6 h-6" />
+                <BsEnvelope className="h-6 w-6" />
               </a>
             </li>
           </ul>

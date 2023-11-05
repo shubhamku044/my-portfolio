@@ -78,9 +78,9 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}>
           </iframe>
         </noscript>
-        <div className='px-4 py-4'>
+        <div className='p-4'>
           <Navbar />
-          <main className="max-w-3xl px-2 sm:px-10 mx-auto mt-24 mb-16 min-h-[90vh]">
+          <main className="mx-auto mb-16 mt-24 min-h-[90vh] max-w-3xl px-2 sm:px-10">
             {children}
           </main>
           <Footer />
