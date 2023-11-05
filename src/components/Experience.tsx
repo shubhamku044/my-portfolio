@@ -75,9 +75,9 @@ const Experience = () => {
   );
 
   return (
-    <div className='flex min-h-[14rem] flex-col gap-4 sm:flex-row sm:gap-6'>
-      <div className='scrollbar scrollbar-track-gray-700 scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin flex flex-row overflow-x-auto pb-4 sm:flex-col'>
-        <LayoutGroup id='a'>
+    <div className="flex min-h-[14rem] flex-col gap-4 sm:flex-row sm:gap-6">
+      <div className="scrollbar scrollbar-track-gray-700 scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin flex flex-row overflow-x-auto pb-4 sm:flex-col">
+        <LayoutGroup id="a">
           {experienceData.slice(0).reverse().map((job) => (
             <button
               className={`relative flex min-w-[110px] justify-center border-b-2 border-gray-300 px-6 py-2 text-sm outline-none duration-200 hover:bg-gray-300 dark:border-gray-600 dark:hover:bg-gray-700 sm:min-w-0 sm:justify-start sm:border-b-0 sm:border-l-2 ${activeJob.id === job.id && 'bg-gray-200 dark:bg-gray-800'}`}
@@ -90,7 +90,7 @@ const Experience = () => {
                 && (
                   <motion.div
                     className={'absolute bottom-[-2px] left-0 z-10 h-[2px] w-full bg-blue-500 dark:bg-blue-500 sm:left-[-2px] sm:top-0 sm:h-full sm:w-[2px]'}
-                    layoutId='underline'
+                    layoutId="underline"
                   />
                 )
               }
@@ -98,19 +98,19 @@ const Experience = () => {
           ))}
         </LayoutGroup>
       </div>
-      <div className='flex-1'>
+      <div className="flex-1">
         <div>
-          <h3 className='text-xl font-semibold'>{activeJob.title} <a href='#' target={'_blank'} className='text-blue-500'>@{activeJob.company}</a></h3>
-          <div className='mt-2 flex justify-between text-sm text-gray-500 dark:text-gray-400'>
+          <h3 className="text-xl font-semibold">{activeJob.title} <a href="#" target={'_blank'} className="text-blue-500">@{activeJob.company}</a></h3>
+          <div className="mt-2 flex justify-between text-sm text-gray-500 dark:text-gray-400">
             <p>{activeJob.startDate} - {activeJob.endDate}</p>
             <p>{activeJob.location}</p>
           </div>
-          <ul className='ml-6 mt-4 space-y-2'>
+          <ul className="ml-6 mt-4 space-y-2">
             {activeJob.description.map((desc, i) => (
-              <li className='relative text-sm dark:text-gray-400' key={i}>
+              <li className="relative text-sm dark:text-gray-400" key={i}>
                 <p>{desc}</p>
                 <span
-                  className='absolute -left-4 top-1/2 h-2 w-2 -translate-y-1/2 bg-gray-300 dark:bg-gray-600'
+                  className="absolute -left-4 top-1/2 h-2 w-2 -translate-y-1/2 bg-gray-300 dark:bg-gray-600"
                   style={{
                     clipPath: 'polygon(100% 50%, 0 0, 0 100%)',
                   }}

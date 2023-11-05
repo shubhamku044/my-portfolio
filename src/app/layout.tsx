@@ -61,7 +61,7 @@ export default function RootLayout({
       </Head>
       <body className={inter.className}>
         <Script
-          id='gtm-script'
+          id="gtm-script"
           strategy="lazyOnload">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -78,7 +78,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}>
           </iframe>
         </noscript>
-        <div className='p-4'>
+        <div className="p-4">
           <Navbar />
           <main className="mx-auto mb-16 mt-24 min-h-[90vh] max-w-3xl px-2 sm:px-10">
             {children}
@@ -90,7 +90,7 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
         />
         <Script
-          id='ga-script'
+          id="ga-script"
           strategy="lazyOnload">
           {`
           window.dataLayer = window.dataLayer || [];
