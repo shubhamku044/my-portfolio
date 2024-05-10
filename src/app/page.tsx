@@ -1,4 +1,5 @@
 import React, { ReactNode, } from 'react';
+import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 import {
   SiTypescript,
   SiJavascript,
@@ -112,12 +113,15 @@ const Home = () => {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold lg:text-5xl">Hey, I&apos;m Shubham 👋</h1>
         <p className={styles.desc}>
-          Building web applications is something I enjoy doing every day, from the server side to the client side. I
-          always enjoy taking on programming challenges and learning new technologies. Currently, I&apos;m working
-          as a Software Engineer Intern at <Link className="font-semibold text-blue-500 underline dark:text-blue-400" href="https://www.sharefable.com/" target="_blank" rel="noreferrer">Fable</Link>.
-          <br /><br />
-          ReactJs, NextJs, TypeScript, and Node.js are my go-to tools for building web applications.
-          I&apos;m also a fan of Go and Python.
+          <RoughNotationGroup show={true}>
+            A <RoughNotation type="underline" multiline>full-stack developer</RoughNotation>.
+            Building web applications is something I enjoy doing every day, from the server
+            side to the client side. I always enjoy taking on programming challenges and learning new technologies.
+            Currently, I&apos;m working as a Software Engineer Intern at <Link className="font-semibold text-blue-500 underline dark:text-blue-400" href="https://www.sharefable.com/" target="_blank" rel="noreferrer">Fable</Link>.
+            <br /><br />
+            ReactJs, NextJs, TypeScript, and Node.js are my go-to tools for building web applications.
+            I&apos;m also a fan of Go and Python.
+          </RoughNotationGroup>
         </p>
       </div>
       <div className="space-y-4">

@@ -147,8 +147,8 @@ const Header = () => {
         <div className="flex h-full flex-col items-center justify-center">
           <ul className="flex flex-col items-center space-y-4">
             {
-              navItems.map((item: INavItem) => (
-                <li key={item.name}>
+              navItems.map((item: INavItem, idx) => (
+                <li key={`${idx}-${item.name}`}>
                   <div>
                     {item.name}
                   </div>
