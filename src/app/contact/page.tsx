@@ -56,8 +56,8 @@ const socialHandles: ISocialHandles[] = [
 const Contact = () => (
   <div className="space-y-10">
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold">Let&apos;s chat 💬</h1>
-      <p className="text-gray-700 dark:text-gray-300">
+      <h1 className="text-3xl font-bold lg:text-4xl">Let&apos;s chat 💬</h1>
+      <p className="text-gray-700 dark:text-gray-300 lg:text-lg">
         I&apos;m always open to discussing new projects,
         creative ideas or opportunities to be part of your visions.
       </p>
@@ -66,16 +66,14 @@ const Contact = () => (
       <div className="flex-1 rounded border border-gray-400 bg-gray-200/60 dark:border-gray-800 dark:bg-gray-900/60">
       </div>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-1">
-        {
-          socialHandles.map((socialHandle) => (
-            <SocialHandleCard
-              key={socialHandle.id}
-              title={socialHandle.title}
-              link={socialHandle.link}
-              icon={socialHandle.icon}
-            />
-          ))
-        }
+        {socialHandles.map((socialHandle) => (
+          <SocialHandleCard
+            key={socialHandle.id}
+            title={socialHandle.title}
+            link={socialHandle.link}
+            icon={socialHandle.icon}
+          />
+        ))}
       </div>
     </div>
   </div>

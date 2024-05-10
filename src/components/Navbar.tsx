@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const styles = {
-  navLink: 'px-4 py-2 text-sm rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 pointer',
+  navLink: 'px-4 py-2 text-sm lg:text-base rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 pointer',
   activeLink: 'bg-gray-300 dark:bg-gray-700'
 };
 
@@ -78,7 +78,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed left-1/2 top-0 mx-auto flex w-full max-w-3xl -translate-x-1/2 select-none items-center justify-between border-b bg-gray-50/50 px-4 py-3 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/50 sm:top-auto sm:w-11/12 sm:rounded-md sm:border sm:border-gray-400">
+      <div className="fixed left-1/2 top-0 mx-auto flex w-full max-w-4xl -translate-x-1/2 select-none items-center justify-between border-b bg-gray-50/50 px-4 py-3 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/50 sm:top-auto sm:w-11/12 sm:rounded-md sm:border sm:border-gray-400">
         <div className={`flex items-center space-x-5`}>
           <div
             className="cursor-pointer rounded-md p-2 transition-all duration-300 ease-out hover:bg-gray-200 dark:hover:bg-gray-800"

@@ -8,6 +8,7 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.shubhams.dev/'),
   title: 'Shubham Sharma | Full-Stack Developer',
   description: 'Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.',
   robots: 'index, follow',
@@ -80,7 +81,7 @@ export default function RootLayout({
         </noscript>
         <div className="p-4">
           <Navbar />
-          <main className="mx-auto mb-16 mt-24 min-h-[90vh] max-w-3xl px-2 sm:px-10">
+          <main className="mx-auto mb-16 mt-24 min-h-[90vh] max-w-4xl px-2 sm:px-10">
             {children}
           </main>
           <Footer />
