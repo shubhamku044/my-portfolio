@@ -91,20 +91,18 @@ const Header = () => {
           <ul className={`hidden items-center space-x-2 sm:flex`}>
             {
               navItems.map((item: INavItem) => (
-                <>
-                  <li key={item.id} className="cursor-pointer">
-                    <Link className={`${styles.navLink} relative`} href={item.path}>
-                      {currPath === item.path && (
-                        <div
-                          className={`absolute left-0 top-0 h-full w-full rounded-md ${styles.activeLink}`}
-                        />
-                      )}
-                      <span className="relative z-10">
-                        {item.name}
-                      </span>
-                    </Link>
-                  </li>
-                </>
+                <li key={item.id} className="cursor-pointer">
+                  <Link className={`${styles.navLink} relative`} href={item.path}>
+                    {currPath === item.path && (
+                      <div
+                        className={`absolute left-0 top-0 h-full w-full rounded-md ${styles.activeLink}`}
+                      />
+                    )}
+                    <span className="relative z-10">
+                      {item.name}
+                    </span>
+                  </Link>
+                </li>
               ))
             }
           </ul>
@@ -112,24 +110,24 @@ const Header = () => {
         <div>
           <ul className={`hidden items-center space-x-8 sm:flex`}>
             <li>
-              <a href="#">
+              <Link href="https://www.github.com/shubhamku044" target="_blank">
                 <BsGithub className="h-6 w-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link href="https://www.twitter.com/shubhamku044" target="_blank">
                 <BsTwitter className="h-6 w-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link href="https://www.linkedin.com/in/shubhamku044" target="_blank">
                 <BsLinkedin className="h-6 w-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link href="mailto:shubhamku044@gmail.com">
                 <BsEnvelope className="h-6 w-6" />
-              </a>
+              </Link>
             </li>
           </ul>
           {
