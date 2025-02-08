@@ -176,7 +176,7 @@ const Contact = () => {
                 className="w-full flex items-center justify-center rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
                 disabled={isSubmitting}
               >
-                {!isSubmitting ? (
+                {isSubmitting ? (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
                   "Send"
