@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, message } = body;
+    const { name, email, message, honeypot } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -20,6 +20,11 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    if (honeypot) {
+      return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    }
+
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "shubhamku044@gmail.com",

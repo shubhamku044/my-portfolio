@@ -61,6 +61,7 @@ const ContactSchema = z.object({
   name: z.string().min(2, "Name is required").max(50),
   email: z.string().email(),
   message: z.string().min(100),
+  honeypot: z.string(),
 });
 
 type ContactSchemaType = z.infer<typeof ContactSchema>;
@@ -79,6 +80,7 @@ const Contact = () => {
       name: "",
       email: "",
       message: "",
+      honeypot: "",
     },
   });
 
@@ -147,6 +149,12 @@ const Contact = () => {
                       {errors.email.message}
                     </span>
                   )}
+                  <input
+                    type="text"
+                    id="honeypot"
+                    {...register("honeypot")}
+                    className="hidden"
+                  />
                 </div>
               </div>
               <div className="space-y-1">
