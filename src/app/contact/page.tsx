@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { SiHashnode } from "react-icons/si";
@@ -66,10 +66,13 @@ const ContactSchema = z.object({
 type ContactSchemaType = z.infer<typeof ContactSchema>;
 
 const Contact = () => {
+  const [status, setStatus] = useState<"success" | "error" | "">("");
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<ContactSchemaType>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
@@ -83,8 +86,20 @@ const Contact = () => {
     data: ContactSchemaType
   ) => {
     try {
-      console.log("getting the data", data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        reset();
+      } else {
+        setStatus("error");
+      }
     } catch (error) {
+      setStatus("error");
       console.error(error);
     }
   };
@@ -158,13 +173,27 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="w-full flex items-center justify-center rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
                 disabled={isSubmitting}
               >
-                Send
+                {!isSubmitting ? (
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                ) : (
+                  "Send"
+                )}
               </button>
             </div>
           </form>
+          {status === "success" && (
+            <div className="mt-1 text-center text-sm text-green-500">
+              ✅ Thank you! Your message has been sent.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="mt-1 text-center text-sm text-red-500">
+              ❌ Oops! Something went wrong. Try again.
+            </div>
+          )}
         </div>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-1">
           {socialHandles.map((socialHandle) => (

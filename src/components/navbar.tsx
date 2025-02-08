@@ -42,9 +42,7 @@ const navItems = [
 ];
 
 const Header = () => {
-  const pathname = usePathname();
   const [theme, setTheme] = useState<ETheme>(ETheme.Dark);
-  const [currPath, setCurrPath] = useState<string>(pathname);
   const [navOpen, setNavOpen] = useState<boolean>(false);
 
   const toggleTheme = (): void => {
@@ -65,16 +63,6 @@ const Header = () => {
     }
   }, [theme]);
 
-  useEffect(() => {
-    const audio = new Audio("/pop_sound_2.mp3");
-    if (location.pathname !== currPath) {
-      audio.currentTime = 0.31;
-      audio.volume = 0.3;
-      audio.play();
-      setCurrPath(location.pathname);
-    }
-  }, [pathname, currPath]);
-
   return (
     <>
       <div className="fixed left-1/2 top-0 mx-auto flex w-full max-w-4xl -translate-x-1/2 select-none items-center justify-between border-b bg-gray-50/50 px-4 py-3 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/50 sm:top-auto sm:w-11/12 sm:rounded-md sm:border sm:border-gray-400">
@@ -93,11 +81,6 @@ const Header = () => {
             {navItems.map((item: INavItem) => (
               <li key={item.id} className="cursor-pointer">
                 <Link className={`${styles.navLink} relative`} href={item.path}>
-                  {currPath === item.path && (
-                    <div
-                      className={`absolute left-0 top-0 h-full w-full rounded-md ${styles.activeLink}`}
-                    />
-                  )}
                   <span className="relative z-10">{item.name}</span>
                 </Link>
               </li>

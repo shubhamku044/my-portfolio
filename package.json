@@ -13,6 +13,7 @@
     "@vercel/analytics": "^1.4.1",
     "framer-motion": "^12.4.1",
     "next": "15.1.6",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
@@ -21,7 +22,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "^20.17.17",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
