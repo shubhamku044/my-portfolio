@@ -39,6 +39,9 @@ export async function POST(req: Request) {
       message: "Data received successfully",
     });
   } catch (error) {
-    return NextResponse.json({ error: "Invalid request" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Invalid request", message: error },
+      { status: 500 }
+    );
   }
 }

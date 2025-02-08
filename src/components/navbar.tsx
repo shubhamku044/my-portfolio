@@ -4,7 +4,6 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { BsGithub, BsTwitter, BsLinkedin, BsEnvelope } from "react-icons/bs";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const styles = {
   navLink:
