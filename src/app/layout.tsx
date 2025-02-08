@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { RandomFavicon } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -70,6 +71,7 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
         />
         <Analytics />
+        <SpeedInsights />
         <Script id="ga-script" strategy="lazyOnload">
           {`
           window.dataLayer = window.dataLayer || [];

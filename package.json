@@ -11,6 +11,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "framer-motion": "^12.4.1",
     "next": "15.1.6",
     "nodemailer": "^6.10.0",
