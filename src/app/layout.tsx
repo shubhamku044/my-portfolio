@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { RandomFavicon } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <RandomFavicon />
+      </head>
       <body className={inter.className}>
         <Script id="gtm-script" strategy="lazyOnload">
           {`
