@@ -1,7 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { BsGithub, BsTwitter, BsLinkedin, BsEnvelope } from "react-icons/bs";
+import {
+  BsGithub,
+  BsTwitter,
+  BsTwitterX,
+  BsLinkedin,
+  BsEnvelope,
+} from "react-icons/bs";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import Link from "next/link";
 
@@ -94,8 +100,8 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://www.twitter.com/shubhamku044" target="_blank">
-                <BsTwitter className="h-6 w-6" />
+              <Link href="https://www.x.com/shubhamku044" target="_blank">
+                <BsTwitterX className="h-6 w-6" />
               </Link>
             </li>
             <li>
