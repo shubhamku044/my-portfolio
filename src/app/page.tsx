@@ -16,9 +16,11 @@ import {
   SiYarn,
   SiFigma,
   SiGo,
+  SiX,
 } from "react-icons/si";
 import { Experience, Projects } from "../components";
 import Link from "next/link";
+import { Dock, DockIcon } from "@/components/magicui/dock";
 
 interface ITechStack {
   name: string;
