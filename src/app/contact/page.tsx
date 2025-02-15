@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AiOutlineTwitter } from "react-icons/ai";
+import { AiOutlineX } from "react-icons/ai";
 import { SiHashnode } from "react-icons/si";
-import { FaLinkedin } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { SocialHandleCard } from "@/components";
 import { z } from "zod";
@@ -20,9 +20,7 @@ const socialHandles: ISocialHandles[] = [
   {
     id: 0,
     title: "@shubhamku044",
-    icon: (
-      <AiOutlineTwitter className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-    ),
+    icon: <AiOutlineX className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
     link: "https://twitter.com/shubhamku044",
   },
   {
@@ -31,24 +29,24 @@ const socialHandles: ISocialHandles[] = [
     icon: <SiHashnode className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
     link: "https://shubhamku044.hashnode.dev/",
   },
-  /* {
+  {
     id: 2,
-    title: 'Shubham Kumar',
-    icon: <FaDiscord className='h-5 w-5 text-gray-400 dark:text-gray-300' />,
-    link: 'https://discord.com/users/70800000000000000',
-  }, */
+    title: "Shubham Kumar",
+    icon: <FaDiscord className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    link: "https://discord.com/users/70800000000000000",
+  },
   {
     id: 3,
     title: "Shubham Kumar",
     icon: <FaLinkedin className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
     link: "https://www.linkedin.com/in/shubhamku044/",
   },
-  // {
-  //   id: 5,
-  //   title: '@shubhamku044',
-  //   icon: <FaInstagram className='h-5 w-5 text-gray-400 dark:text-gray-300' />,
-  //   link: 'https://www.instagram.com/shubhamku044/',
-  // },
+  {
+    id: 5,
+    title: "@shubhamku044",
+    icon: <FaInstagram className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    link: "https://www.instagram.com/shubhamku044/",
+  },
   {
     id: 6,
     title: "shubhamku044@gmail.com",
@@ -115,7 +113,7 @@ const Contact = () => {
           opportunities to be part of your visions.
         </p>
       </div>
-      <div className="flex flex-col-reverse items-start gap-2 md:flex-row">
+      <div className="flex flex-col-reverse items-start gap-2 md:flex-row md:items-stretch">
         <div className="flex-1 rounded border border-gray-400 bg-gray-200/60 dark:border-gray-800 dark:bg-gray-900/60">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4 p-4">
