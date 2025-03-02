@@ -1,3 +1,4 @@
+'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';

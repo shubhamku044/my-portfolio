@@ -1,5 +1,5 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
@@ -71,8 +71,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.shubhams.dev/',
   },
-  themeColor: '#fffbeb',
   manifest: '/site.webmanifest',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#fffbeb',
+  viewportFit: 'contain',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
