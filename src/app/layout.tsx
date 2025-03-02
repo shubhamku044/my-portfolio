@@ -13,22 +13,66 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.shubhams.dev/'),
   title: 'Shubham Sharma | Full-Stack Developer',
   description:
-    'Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.',
+    'Hello, I am Shubham Sharma, a full-stack developer specializing in TypeScript, Go and cloud technologies. I build scalable applications and optimize cloud infrastructure.',
   robots: 'index, follow',
-  keywords: 'shubhamku044, shubham sharma, shubham kumar, shubham dev, shubhams, shubhams.dev',
+  keywords: [
+    'shubhamku044',
+    'shubham sharma',
+    'shubham kumar',
+    'shubham dev',
+    'shubhams',
+    'shubhams.dev',
+    'full-stack developer',
+    'Go developer',
+    'TypeScript developer',
+    'Kubernetes',
+    'AWS',
+    'Next.js',
+    'Vue.js',
+    'Freelance developer',
+    'Software engineer',
+    'Backend developer',
+    'Frontend developer',
+  ].join(', '),
+  authors: [
+    {
+      name: 'Shubham Sharma',
+      url: 'https://www.shubhams.dev/',
+    },
+  ],
+  creator: 'Shubham Sharma',
+  applicationName: 'Shubhams.dev',
   twitter: {
     site: '@shubhamku044',
     creator: '@shubhamku044',
     title: 'Shubham Sharma | Full-Stack Developer',
     description:
-      'Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.',
+      'Hello, I am Shubham Sharma, a full-stack developer specializing in TypeScript, Go and cloud technologies. I build scalable applications and optimize cloud infrastructure.',
+    card: 'summary_large_image',
+    // images: ['https://www.shubhams.dev/images/og-image.jpg'],
   },
   openGraph: {
     title: 'Shubham Sharma | Full-Stack Developer',
     description:
-      'Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.',
+      'Full-stack developer with expertise in TypeScript, Go and cloud technologies. Passionate about building scalable and high-performance applications.',
     type: 'website',
+    url: 'https://www.shubhams.dev/',
+    siteName: 'Shubhams.dev',
+    // images: [
+    //   {
+    //     url: 'https://www.shubhams.dev/images/og-image.jpg',
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Shubham Sharma - Full-Stack Developer & DevOps Enthusiast',
+    //   },
+    // ],
+    locale: 'en_US',
   },
+  alternates: {
+    canonical: 'https://www.shubhams.dev/',
+  },
+  themeColor: '#fffbeb',
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
