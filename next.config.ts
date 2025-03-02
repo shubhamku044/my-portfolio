@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'www.ticollege.ac.in',
       },
+      {
+        hostname: 'opengraph.githubassets.com',
+      },
     ],
   },
 };

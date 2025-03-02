@@ -68,7 +68,7 @@ export default function ContactSection() {
             <Link href="#" className="font-medium text-stone-900 underline">
               with a direct question on X
             </Link>{' '}
-            and I&apos;ll respond whenever I can. I will ignore all soliciting.
+            and I&apos;ll respond whenever I can.
           </p>
           <div className="mt-6 inline-block animate-pulse rounded-lg bg-amber-100/90 px-4 py-2">
             <div className="flex items-center text-sm font-medium text-stone-800/90">

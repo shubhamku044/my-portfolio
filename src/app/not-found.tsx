@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div className="flex h-dvh items-center justify-center bg-amber-50 p-8">
       <div className="mx-auto max-w-2xl text-center">
-        <div className="animate-pulse relative mx-auto mb-12 size-64">
+        <div className="relative mx-auto mb-12 size-64 animate-pulse">
           <svg viewBox="0 0 200 200" className="text-amber-100">
             <circle cx="100" cy="100" r="80" fill="currentColor" />
             <circle cx="140" cy="80" r="12" className="fill-amber-200" />

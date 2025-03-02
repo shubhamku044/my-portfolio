@@ -11,6 +11,7 @@ import ProjectsSection from './projects-section';
 import ContactSection from './contact-section';
 import ExperienceSection from './experience-section';
 import Education from './education-section';
+import BoldLink from './bold-link';
 
 export {
   Navbar,
@@ -26,4 +27,5 @@ export {
   ContactSection,
   ExperienceSection,
   Education,
+  BoldLink,
 };

@@ -1,52 +1,84 @@
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { BoldLink } from '@/components';
 import { Globe } from 'lucide-react';
+import { FiGithub } from 'react-icons/fi';
+import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Postel',
-    duration: 'March 2024 - Present',
-    description:
-      'AI-powered content generation platform for social media. Write engaging content in seconds with one-click generation and human-like content optimized for LinkedIn, X, Reddit, Medium, and Quora.',
-    image: '/projects/postel.png',
+    title: 'La Resume',
+    description: (
+      <>
+        La-Resume is a free, <BoldLink>open-source</BoldLink>, and ATS-friendly resume builder
+        powered by LaTeX. Just enter your details, preview, and{' '}
+        <BoldLink>download the PDF and LaTeX</BoldLink> source. Built with Next.js and TypeScript.
+        It is used by <BoldLink>100+ users</BoldLink> as of now.
+      </>
+    ),
+    image: '/projects/la-resume.png',
     techStack: [
       'Next.js',
       'TypeScript',
+      'Docker',
       'React',
       'TailwindCSS',
       'Shadcn',
-      'Radix UI',
-      'Better Auth',
-      'HonoJS',
-      'Trigger.dev',
-      'Resend',
-      'OpenAI',
+      'Clerk',
+      'MongoDB',
+      'Prisma',
+      'AWS',
+      'Python',
       'Vercel',
     ],
-    website: '#',
+    website: 'https://la-resume.tech',
+    github: 'https://github.com/shubhamku044/la-resume',
+    imageBlurHash: 'L4Ro{d~W@M?Z00Md?sRQ8xkXELWU',
   },
   {
-    title: 'NativeExpress',
-    duration: 'February 2024 - March 2024',
-    description:
-      'Complete toolkit for quickly building, launching, and monetizing React Native apps. Includes boilerplate code, authentication, payments, UI components, and comprehensive guides.',
-    image: '/projects/nativeexpress.png',
-    techStack: [
-      'React Native',
-      'Expo',
-      'TypeScript',
-      'RevenueCat',
-      'Gluestack UI',
-      'Supabase',
-      'Next.js',
-      'TailwindCSS',
-      'Shadcn',
-      'Radix UI',
-      'Vercel',
-    ],
-    website: '#',
+    title: 'Restaurant Management System',
+    description: (
+      <>
+        Revolutionize restaurant management with a <BoldLink>GoLang-powered REST API</BoldLink>.
+        Seamlessly handle orders, inventory, and reservations with unparalleled performance and
+        security.
+      </>
+    ),
+    image: 'https://opengraph.githubassets.com/1a/shubhamku044/restaurant-management-system',
+    techStack: ['GoLang', 'REST API', 'Gin', 'Gorm', 'MongoDB', 'Docker', 'Postman', 'JWT'],
+    website: null,
+    github: 'https://github.com/shubhamku044/restaurant-management-system',
+  },
+  {
+    title: 'Miro Board',
+    description: (
+      <>
+        A collaborative whiteboard application that allows users to{' '}
+        <BoldLink>draw, write, and chat</BoldLink>
+        with each other in real-time. Built using Next.js, Convex, and Liveblocks.
+      </>
+    ),
+    image: '/projects/miro-board.png',
+    techStack: ['Next.js', 'Convex', 'Liveblocks', 'React', 'Vercel', 'TailwindCSS', 'ShadCN'],
+    website: 'https://miro-board-fawn.vercel.app/',
+    github: 'https://github.com/shubhamku044/miro-board',
+    imageBlurHash: 'L7QT4P0100xtN1bI_2-:Dz~m_39I',
+  },
+  {
+    title: 'TypoSpeed Tracker',
+    description: (
+      <>
+        TypoSpeed Tracker is your gateway to honing your typing skills. Test your{' '}
+        <BoldLink>typing speed and accuracy</BoldLink> with our user-friendly platform, akin to
+        10fastfingers. Improve your typing prowess and track your progress today!
+      </>
+    ),
+    image: '/projects/typo-speed-tracker.png',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Vercel'],
+    website: 'https://typospeed-tracker.vercel.app/',
+    github: 'https://github.com/shubhamku044/typospeed-tracker',
+    imageBlurHash: 'LZB:?Zj?s@j?_Nozk9og_Nj?adfi',
   },
 ];
 
@@ -75,26 +107,44 @@ export default function Projects() {
                 width={500}
                 height={300}
                 className="h-40 w-full object-cover"
+                placeholder="blur"
+                loading="lazy"
+                blurDataURL={project?.imageBlurHash ?? 'L4Ryd6~W@N?a00Q-?rRQ4To#I:WB'}
               />
               <CardContent className="flex flex-1 flex-col justify-between p-4 text-start">
                 <div className="space-y-1">
                   <h3 className="mt-1 text-base font-semibold tracking-tight">{project.title}</h3>
-                  <p className="font-sans text-xs">{project.duration}</p>
                   <p className="prose text-muted-foreground dark:prose-invert max-w-full text-pretty font-sans text-xs">
                     {project.description}
                   </p>
                 </div>
-                <div className="mt-auto">
+                <div className="mt-4">
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, i) => (
-                      <Badge key={i} className="rounded-md px-2 py-1 text-xs text-black">
+                      <Badge
+                        key={i}
+                        className="cursor-default bg-amber-200/60 text-stone-900 transition-all hover:bg-amber-200/50"
+                      >
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="mt-3 flex w-full items-center gap-2">
-                    <Globe size={16} /> Website
-                  </Button>
+                  <div className="mt-3 flex gap-2">
+                    {project.website && (
+                      <Link target="_blank" href={project.website}>
+                        <Badge className="gap-2 bg-black px-2 py-1 text-amber-50">
+                          <Globe size={12} /> Website
+                        </Badge>
+                      </Link>
+                    )}
+                    {project.github && (
+                      <Link target="_blank" href={project.github}>
+                        <Badge className="gap-2 bg-black px-2 py-1 text-amber-50">
+                          <FiGithub size={12} /> Github
+                        </Badge>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>
