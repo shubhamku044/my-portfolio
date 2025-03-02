@@ -1,37 +1,14 @@
 'use client';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import React from 'react';
-
-const BoldLink = ({ href, children }: { href?: string; children: React.ReactNode }) => {
-  if (href)
-    return (
-      <Link className="font-semibold text-stone-900 underline" href={href} target="_blank">
-        {children}
-      </Link>
-    );
-
-  return <span className="font-semibold text-stone-900">{children}</span>;
-};
+import BoldLink from './bold-link';
 
 const AboutSection = () => {
   return (
     <section id="about">
       <div className="">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-xl font-bold text-stone-900"
-        >
-          About
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="prose text-muted-foreground dark:prose-invert max-w-full text-pretty font-sans text-sm"
-        >
+        <motion.h2 className="text-xl font-bold text-stone-900">About</motion.h2>
+        <motion.p className="prose text-muted-foreground dark:prose-invert max-w-full text-pretty font-sans text-sm">
           I’m Shubham, a Software Engineer with over <BoldLink>3 years of experience</BoldLink>.
           Armed with a BTech in Computer Science, I specialize in ReactJs, NextJs, TypeScript, and
           Node.js, with a passion for building efficient web applications. I’m an active{' '}
