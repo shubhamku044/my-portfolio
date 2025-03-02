@@ -1,5 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
+'use client';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
@@ -10,10 +10,10 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="mb-8 text-4xl font-bold text-white">Let's Work Together</h2>
+          <h2 className="mb-8 text-4xl font-bold text-white">Let&apos;s Work Together</h2>
           <p className="mb-12 text-xl text-gray-200">
-            Currently available for full-time roles and contract work.
-            Let's discuss how I can contribute to your team!
+            Currently available for full-time roles and contract work. Let&apos;s discuss how I can
+            contribute to your team!
           </p>
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
             <motion.a

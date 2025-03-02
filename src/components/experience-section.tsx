@@ -31,7 +31,7 @@ export default function Experience() {
             >
               <div className={`w-full max-w-xl ${idx % 2 === 0 ? 'mr-auto' : 'ml-auto'} p-6`}>
                 <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg">
-                  <div className="absolute top-6 h-4 w-4 rounded-full bg-gradient-to-r from-amber-400 to-purple-400" />
+                  <div className="absolute top-6 size-4 rounded-full bg-gradient-to-r from-amber-400 to-purple-400" />
                   <h3 className="text-2xl font-bold text-gray-900">{exp.role}</h3>
                   <p className="mt-2 text-lg text-amber-600">{exp.company}</p>
                   <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-600">

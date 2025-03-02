@@ -55,7 +55,7 @@ const Experience = () => {
   );
 
   return (
-    <div className="flex min-h-[14rem] flex-col gap-4 sm:flex-row sm:gap-6">
+    <div className="flex min-h-56 flex-col gap-4 sm:flex-row sm:gap-6">
       <div className="scrollbar scrollbar-track-gray-700 scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin flex flex-row overflow-x-auto pb-4 sm:flex-col">
         <LayoutGroup id="a">
           {experienceData
@@ -104,7 +104,7 @@ const Experience = () => {
               >
                 <p>{desc}</p>
                 <span
-                  className="absolute -left-4 top-1/2 h-2 w-2 -translate-y-1/2 bg-gray-300 dark:bg-gray-600"
+                  className="absolute -left-4 top-1/2 size-2 -translate-y-1/2 bg-gray-300 dark:bg-gray-600"
                   style={{
                     clipPath: "polygon(100% 50%, 0 0, 0 100%)",
                   }}

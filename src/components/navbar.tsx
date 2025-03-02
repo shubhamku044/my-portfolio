@@ -77,9 +77,9 @@ const Header = () => {
             onClick={toggleTheme}
           >
             {theme === ETheme.Light ? (
-              <FiMoon className="h-4 w-4" />
+              <FiMoon className="size-4" />
             ) : (
-              <FiSun className="h-4 w-4" />
+              <FiSun className="size-4" />
             )}
           </div>
           <ul className={`hidden items-center space-x-2 sm:flex`}>
@@ -96,12 +96,12 @@ const Header = () => {
           <ul className={`hidden items-center space-x-8 sm:flex`}>
             <li>
               <Link href="https://www.github.com/shubhamku044" target="_blank">
-                <BsGithub className="h-6 w-6" />
+                <BsGithub className="size-6" />
               </Link>
             </li>
             <li>
               <Link href="https://www.x.com/shubhamku044" target="_blank">
-                <BsTwitterX className="h-6 w-6" />
+                <BsTwitterX className="size-6" />
               </Link>
             </li>
             <li>
@@ -109,25 +109,25 @@ const Header = () => {
                 href="https://www.linkedin.com/in/shubhamku044"
                 target="_blank"
               >
-                <BsLinkedin className="h-6 w-6" />
+                <BsLinkedin className="size-6" />
               </Link>
             </li>
             <li>
               <Link href="mailto:shubhamku044@gmail.com">
-                <BsEnvelope className="h-6 w-6" />
+                <BsEnvelope className="size-6" />
               </Link>
             </li>
           </ul>
           {!navOpen ? (
             <HiMenuAlt3
-              className="h-8 w-8 cursor-pointer sm:hidden"
+              className="size-8 cursor-pointer sm:hidden"
               onClick={() => {
                 setNavOpen((prv) => !prv);
               }}
             />
           ) : (
             <HiOutlineX
-              className="h-8 w-8 cursor-pointer sm:hidden"
+              className="size-8 cursor-pointer sm:hidden"
               onClick={() => {
                 setNavOpen((prv) => !prv);
               }}
@@ -151,22 +151,22 @@ const Header = () => {
           <ul className="mt-4 flex space-x-4">
             <li>
               <a href="#">
-                <BsGithub className="h-6 w-6" />
+                <BsGithub className="size-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsTwitter className="h-6 w-6" />
+                <BsTwitter className="size-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsLinkedin className="h-6 w-6" />
+                <BsLinkedin className="size-6" />
               </a>
             </li>
             <li>
               <a href="#">
-                <BsEnvelope className="h-6 w-6" />
+                <BsEnvelope className="size-6" />
               </a>
             </li>
           </ul>

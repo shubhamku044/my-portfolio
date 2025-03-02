@@ -20,37 +20,37 @@ const socialHandles: ISocialHandles[] = [
   {
     id: 0,
     title: "@shubhamku044",
-    icon: <AiOutlineX className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <AiOutlineX className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "https://twitter.com/shubhamku044",
   },
   {
     id: 1,
     title: "@shubhamku044",
-    icon: <SiHashnode className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <SiHashnode className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "https://shubhamku044.hashnode.dev/",
   },
   {
     id: 2,
     title: "Shubham Kumar",
-    icon: <FaDiscord className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <FaDiscord className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "https://discord.com/users/70800000000000000",
   },
   {
     id: 3,
     title: "Shubham Kumar",
-    icon: <FaLinkedin className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <FaLinkedin className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "https://www.linkedin.com/in/shubhamku044/",
   },
   {
     id: 5,
     title: "@shubhamku044",
-    icon: <FaInstagram className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <FaInstagram className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "https://www.instagram.com/shubhamku044/",
   },
   {
     id: 6,
     title: "shubhamku044@gmail.com",
-    icon: <MdEmail className="h-5 w-5 text-gray-400 dark:text-gray-300" />,
+    icon: <MdEmail className="size-5 text-gray-400 dark:text-gray-300" />,
     link: "mailto:shubhamku044@gmail.com",
   },
 ];
@@ -179,11 +179,11 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="flex w-full items-center justify-center rounded bg-blue-500 p-2 text-white hover:bg-blue-600"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  <div className="size-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
                   "Send"
                 )}

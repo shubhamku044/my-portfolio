@@ -8,9 +8,9 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="fixed top-4 right-4 p-2 rounded-full bg-accent-light dark:bg-accent-dark text-white"
+      className="fixed right-4 top-4 rounded-full bg-accent-light p-2 text-white dark:bg-accent-dark"
     >
-      {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
     </button>
   );
 };

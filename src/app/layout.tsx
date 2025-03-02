@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RandomFavicon />
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-background antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6`}
+        className={`${inter.className} bg-background mx-auto min-h-screen max-w-2xl px-6 py-12 antialiased sm:py-24`}
       >
         <Script id="gtm-script" strategy="lazyOnload">
           {`
@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <main className="flex flex-col min-h-[100dvh] space-y-10">{children}</main>
+        <main className="flex min-h-dvh flex-col space-y-10">{children}</main>
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}

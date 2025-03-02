@@ -51,7 +51,7 @@ const SocialHandleCard: React.FC<ISocialHandleCard> = ({
       <div className="flex items-center space-x-2">
         {icon}
         <p className="text-sm text-gray-900 dark:text-gray-300">{title}</p>
-        <HiOutlineExternalLink className="block h-4 w-4 font-light text-gray-400 dark:text-gray-500" />
+        <HiOutlineExternalLink className="block size-4 font-light text-gray-400 dark:text-gray-500" />
       </div>
     </a>
   );
