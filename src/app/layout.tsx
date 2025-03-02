@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description:
       'Hello, I am Shubham Sharma, a full-stack developer specializing in TypeScript, Go and cloud technologies. I build scalable applications and optimize cloud infrastructure.',
     card: 'summary_large_image',
-    // images: ['https://www.shubhams.dev/images/og-image.jpg'],
+    images: 'https://www.shubhams.dev/og-image.png',
   },
   openGraph: {
     title: 'Shubham Sharma | Full-Stack Developer',
@@ -58,14 +58,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.shubhams.dev/',
     siteName: 'Shubhams.dev',
-    // images: [
-    //   {
-    //     url: 'https://www.shubhams.dev/images/og-image.jpg',
-    //     width: 1200,
-    //     height: 630,
-    //     alt: 'Shubham Sharma - Full-Stack Developer & DevOps Enthusiast',
-    //   },
-    // ],
+    images: [
+      {
+        url: 'https://www.shubhams.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Shubham Sharma - Full-Stack Developer',
+      },
+    ],
     locale: 'en_US',
   },
   alternates: {
