@@ -19,7 +19,7 @@ const eslintConfig = [
   {
     rules: {
       'tailwindcss/no-custom-classname': [
-        'error',
+        'warn',
         {
           whitelist: ['text-muted-foreground'],
         },

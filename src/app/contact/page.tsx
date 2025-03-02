@@ -1,13 +1,13 @@
-"use client";
-import React, { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { AiOutlineX } from "react-icons/ai";
-import { SiHashnode } from "react-icons/si";
-import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { SocialHandleCard } from "@/components";
-import { z } from "zod";
-import { SubmitHandler, useForm } from "react-hook-form";
+'use client';
+import React, { useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { AiOutlineX } from 'react-icons/ai';
+import { SiHashnode } from 'react-icons/si';
+import { FaDiscord, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { SocialHandleCard } from '@/components';
+import { z } from 'zod';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 interface ISocialHandles {
   id: number;
@@ -19,44 +19,44 @@ interface ISocialHandles {
 const socialHandles: ISocialHandles[] = [
   {
     id: 0,
-    title: "@shubhamku044",
+    title: '@shubhamku044',
     icon: <AiOutlineX className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "https://twitter.com/shubhamku044",
+    link: 'https://twitter.com/shubhamku044',
   },
   {
     id: 1,
-    title: "@shubhamku044",
+    title: '@shubhamku044',
     icon: <SiHashnode className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "https://shubhamku044.hashnode.dev/",
+    link: 'https://shubhamku044.hashnode.dev/',
   },
   {
     id: 2,
-    title: "Shubham Kumar",
+    title: 'Shubham Kumar',
     icon: <FaDiscord className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "https://discord.com/users/70800000000000000",
+    link: 'https://discord.com/users/70800000000000000',
   },
   {
     id: 3,
-    title: "Shubham Kumar",
+    title: 'Shubham Kumar',
     icon: <FaLinkedin className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "https://www.linkedin.com/in/shubhamku044/",
+    link: 'https://www.linkedin.com/in/shubhamku044/',
   },
   {
     id: 5,
-    title: "@shubhamku044",
+    title: '@shubhamku044',
     icon: <FaInstagram className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "https://www.instagram.com/shubhamku044/",
+    link: 'https://www.instagram.com/shubhamku044/',
   },
   {
     id: 6,
-    title: "shubhamku044@gmail.com",
+    title: 'shubhamku044@gmail.com',
     icon: <MdEmail className="size-5 text-gray-400 dark:text-gray-300" />,
-    link: "mailto:shubhamku044@gmail.com",
+    link: 'mailto:shubhamku044@gmail.com',
   },
 ];
 
 const ContactSchema = z.object({
-  name: z.string().min(2, "Name is required").max(50),
+  name: z.string().min(2, 'Name is required').max(50),
   email: z.string().email(),
   message: z.string().min(100),
   honeypot: z.string(),
@@ -65,7 +65,7 @@ const ContactSchema = z.object({
 type ContactSchemaType = z.infer<typeof ContactSchema>;
 
 const Contact = () => {
-  const [status, setStatus] = useState<"success" | "error" | "">("");
+  const [status, setStatus] = useState<'success' | 'error' | ''>('');
 
   const {
     register,
@@ -75,31 +75,29 @@ const Contact = () => {
   } = useForm<ContactSchemaType>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-      honeypot: "",
+      name: '',
+      email: '',
+      message: '',
+      honeypot: '',
     },
   });
 
-  const onSubmit: SubmitHandler<ContactSchemaType> = async (
-    data: ContactSchemaType
-  ) => {
+  const onSubmit: SubmitHandler<ContactSchemaType> = async (data: ContactSchemaType) => {
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
       if (response.ok) {
-        setStatus("success");
+        setStatus('success');
         reset();
       } else {
-        setStatus("error");
+        setStatus('error');
       }
     } catch (error) {
-      setStatus("error");
+      setStatus('error');
       console.error(error);
     }
   };
@@ -109,8 +107,8 @@ const Contact = () => {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold lg:text-4xl">Let&apos;s chat 💬</h1>
         <p className="text-gray-700 dark:text-gray-300 lg:text-lg">
-          I&apos;m always open to discussing new projects, creative ideas or
-          opportunities to be part of your visions.
+          I&apos;m always open to discussing new projects, creative ideas or opportunities to be
+          part of your visions.
         </p>
       </div>
       <div className="flex flex-col-reverse items-start gap-2 md:flex-row md:items-stretch">
@@ -124,7 +122,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="name"
-                    {...register("name", { required: "Name is required" })}
+                    {...register('name', { required: 'Name is required' })}
                     className="w-full rounded border border-gray-800 p-2 text-sm outline-none dark:border-gray-600 dark:bg-gray-900"
                   />
                   {errors.name && (
@@ -139,7 +137,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="email"
-                    {...register("email", { required: "Email is required" })}
+                    {...register('email', { required: 'Email is required' })}
                     className="w-full rounded border border-gray-800 p-2 text-sm outline-none dark:border-gray-600 dark:bg-gray-900"
                   />
                   {errors.email && (
@@ -147,12 +145,7 @@ const Contact = () => {
                       {errors.email.message}
                     </span>
                   )}
-                  <input
-                    type="text"
-                    id="honeypot"
-                    {...register("honeypot")}
-                    className="hidden"
-                  />
+                  <input type="text" id="honeypot" {...register('honeypot')} className="hidden" />
                 </div>
               </div>
               <div className="space-y-1">
@@ -161,20 +154,18 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  {...register("message", {
-                    required: "Message is required",
+                  {...register('message', {
+                    required: 'Message is required',
                     minLength: {
                       value: 100,
-                      message: "Message should be at least 100 characters",
+                      message: 'Message should be at least 100 characters',
                     },
                   })}
                   rows={4}
                   className="w-full rounded border border-gray-800 p-2 text-sm outline-none dark:border-gray-600 dark:bg-gray-900"
                 />
                 {errors.message && (
-                  <span className="text-xs text-red-400">
-                    {errors.message.message}
-                  </span>
+                  <span className="text-xs text-red-400">{errors.message.message}</span>
                 )}
               </div>
               <button
@@ -185,17 +176,17 @@ const Contact = () => {
                 {isSubmitting ? (
                   <div className="size-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
                 ) : (
-                  "Send"
+                  'Send'
                 )}
               </button>
             </div>
           </form>
-          {status === "success" && (
+          {status === 'success' && (
             <div className="mt-1 text-center text-sm text-green-500">
               ✅ Thank you! Your message has been sent.
             </div>
           )}
-          {status === "error" && (
+          {status === 'error' && (
             <div className="mt-1 text-center text-sm text-red-500">
               ❌ Oops! Something went wrong. Try again.
             </div>

@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { RandomFavicon } from '@/components';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RandomFavicon />
       </head>
       <body
-        className={`${inter.className} mx-auto min-h-screen max-w-2xl bg-amber-50 px-6 py-12 text-stone-800 antialiased sm:py-24`}
+        className={`${inter.className} mx-auto min-h-screen max-w-2xl bg-amber-50 text-stone-800 antialiased`}
       >
         <Script id="gtm-script" strategy="lazyOnload">
           {`
@@ -55,7 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <main className="flex min-h-dvh flex-col space-y-10">{children}</main>
+        <main className="flex flex-col space-y-10 px-6 py-12 sm:py-24">{children}</main>
+        <Toaster />
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}

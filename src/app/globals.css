@@ -4,7 +4,7 @@
 
 @layer utilities {
   .text-muted-foreground {
-    @apply text-stone-600/80;
+    @apply text-stone-700/90;
   }
 
   .hover\:text-muted-foreground:hover {
