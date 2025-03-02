@@ -90,9 +90,7 @@ export default function Projects() {
           <Badge className="inline-block rounded-lg bg-black px-3 py-1 text-sm text-white">
             My Projects
           </Badge>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-            Check out my latest work
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Check out my Projects</h2>
           <p className="mx-auto mt-2 max-w-2xl text-gray-500">
             I&apos;ve worked on a variety of projects, from simple websites to complex web
             applications. Here are a few of my favorites.
