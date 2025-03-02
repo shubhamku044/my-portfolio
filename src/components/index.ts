@@ -1,8 +1,3 @@
-import Navbar from './navbar';
-import Footer from './footer';
-import ProjectCard from './project-card';
-import SocialHandleCard from './social-handle-card';
-import Projects from './projects';
 import RandomFavicon from './random-favicon';
 import Hero from './hero';
 import AboutSection from './about-section';
@@ -14,11 +9,6 @@ import Education from './education-section';
 import BoldLink from './bold-link';
 
 export {
-  Navbar,
-  Projects,
-  Footer,
-  ProjectCard,
-  SocialHandleCard,
   RandomFavicon,
   Hero,
   AboutSection,
