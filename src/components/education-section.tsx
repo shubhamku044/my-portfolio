@@ -1,28 +1,22 @@
 'use client';
 import Image from 'next/image';
 
-const workExperience = [
+const education = [
   {
-    company: 'TESTLIFY',
-    role: 'Full stack developer intern',
-    duration: 'October 2024 - Present',
-    logo: 'https://testlify.com/wp-content/uploads/2023/10/cropped-cropped-Testlify-Icon-192x192.png',
-  },
-  {
-    company: 'FABLE',
-    role: 'Software Engineer Intern',
-    duration: 'November 2022 - June 2024',
-    logo: 'https://www.sharefable.com/favicon.png',
+    company: 'TECHNO MAIN SALT LAKE, KOLKATA, INDIA',
+    role: 'B.Tech in Computer Science and Engineering',
+    duration: '2021 - 2025',
+    logo: 'https://www.ticollege.ac.in/img/tig/footer-logo.png',
   },
 ];
 
-export default function WorkExperience() {
+export default function Education() {
   return (
-    <section id="experience">
+    <section id="education">
       <div className="space-y-3">
-        <h2 className="text-xl font-bold">Work Experience</h2>
+        <h2 className="text-xl font-bold">Education</h2>
         <div className="space-y-3">
-          {workExperience.map((job, index) => (
+          {education.map((job, index) => (
             <div key={index} className="flex items-start">
               <Image
                 src={job.logo}

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .text-muted-foreground {
+    @apply text-stone-600/80;
+  }
+
+  .hover\:text-muted-foreground:hover {
+    @apply text-stone-600/100;
+  }
+}

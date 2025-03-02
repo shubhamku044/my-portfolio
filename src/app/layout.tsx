@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RandomFavicon />
       </head>
       <body
-        className={`${inter.className} bg-background mx-auto min-h-screen max-w-2xl px-6 py-12 antialiased sm:py-24`}
+        className={`${inter.className} mx-auto min-h-screen max-w-2xl bg-amber-50 px-6 py-12 text-stone-800 antialiased sm:py-24`}
       >
         <Script id="gtm-script" strategy="lazyOnload">
           {`

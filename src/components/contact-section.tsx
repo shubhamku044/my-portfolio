@@ -1,37 +1,40 @@
-'use client';
-import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from './ui/badge';
 
-export default function Contact() {
+export default function ContactSection() {
   return (
-    <section className="bg-gradient-to-b from-[#16213e] to-[#0f3460] py-20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <h2 className="mb-8 text-4xl font-bold text-white">Let&apos;s Work Together</h2>
-          <p className="mb-12 text-xl text-gray-200">
-            Currently available for full-time roles and contract work. Let&apos;s discuss how I can
-            contribute to your team!
+    <section id="contact" className="">
+      <div className="mx-auto max-w-4xl space-y-12 py-12 text-center">
+        <div className="mx-auto">
+          <Badge className="inline-block rounded-lg bg-black px-3 py-1 text-sm text-white">
+            Contact
+          </Badge>
+          <h2 className="mt-4 text-4xl font-bold">Get in Touch</h2>
+          <p className="mt-2 text-gray-600">
+            Want to chat? Just shoot me a DM{' '}
+            <a href="#" className="text-blue-500 underline">
+              with a direct question on X
+            </a>{' '}
+            and I&apos;ll respond whenever I can. I will ignore all soliciting.
           </p>
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="mailto:your@email.com"
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-lg font-semibold text-white sm:w-auto"
-            >
-              Schedule a Call
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="/resume.pdf"
-              className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-lg font-semibold text-white sm:w-auto"
-            >
-              Download Resume
-            </motion.a>
-          </div>
-        </motion.div>
+          <p className="mt-2 font-medium text-red-500">Actively looking for opportunities.</p>
+        </div>
+
+        <Card className="mx-auto mt-8 max-w-xl border border-gray-200 p-6 shadow-lg">
+          <CardContent>
+            <form className="space-y-4">
+              <Input type="text" placeholder="Your Name" className="w-full" required />
+              <Input type="email" placeholder="Your Email" className="w-full" required />
+              <Textarea placeholder="Your Message" className="w-full" required />
+              <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800">
+                Send Message
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ const AboutSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-xl font-bold"
+          className="text-xl font-bold text-stone-900"
         >
           About
         </motion.h2>

@@ -1,49 +1,46 @@
-"use client"
-import { motion } from "framer-motion";
+import { Badge } from './ui/badge';
 
 const skills = [
-  "Java",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "MongoDB",
-  "Docker",
-  "AWS",
-  "Kubernetes",
-  "Python",
-  "Spring Boot",
+  'Java',
+  'TypeScript',
+  'JavaScript',
+  'Python',
+  'Spring',
+  'Spring Boot',
+  'React',
+  'React Native',
+  'NestJs',
+  'NextJs',
+  'Node.js',
+  'PostgreSQL',
+  'MongoDB',
+  'Docker',
+  'Kubernetes',
+  'AWS',
+  'Azure',
+  'Google Cloud',
+  'Langchain',
+  'LlamaIndex',
+  'Langsmith',
+  'Prompt Engineering',
 ];
 
-const SkillsSection = () => {
+export default function Skills() {
   return (
-    <section className="bg-background-light py-16 text-text-light dark:bg-background-dark dark:text-text-dark">
-      <div className="mx-auto max-w-4xl px-4">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-center text-4xl font-bold"
-        >
-          Skills
-        </motion.h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          {skills.map((skill, index) => (
-            <motion.span
+    <section id="skills">
+      <div className="space-y-3">
+        <h2 className="text-xl font-bold">Skills</h2>
+        <div className="flex flex-wrap gap-1">
+          {skills.map((skill) => (
+            <Badge
+              className="cursor-default bg-amber-200/60 text-stone-900 transition-all hover:bg-amber-200/50"
               key={skill}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-full bg-accent-light px-4 py-2 text-white dark:bg-accent-dark"
             >
               {skill}
-            </motion.span>
+            </Badge>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default SkillsSection;
+}
