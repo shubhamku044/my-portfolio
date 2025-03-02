@@ -1,48 +1,94 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Footer, Navbar } from "@/components";
-import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { RandomFavicon } from "@/components";
+import './globals.css';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { RandomFavicon } from '@/components';
+import { Toaster } from '@/components/ui/sonner';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.shubhams.dev/"),
-  title: "Shubham Sharma | Full-Stack Developer",
+  metadataBase: new URL('https://www.shubhams.dev/'),
+  title: 'Shubham Sharma | Full-Stack Developer',
   description:
-    "Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.",
-  robots: "index, follow",
-  keywords:
-    "shubhamku044, shubham sharma, shubham kumar, shubham dev, shubhams, shubhams.dev",
+    'Hello, I am Shubham Sharma, a full-stack developer specializing in TypeScript, Go and cloud technologies. I build scalable applications and optimize cloud infrastructure.',
+  robots: 'index, follow',
+  keywords: [
+    'shubhamku044',
+    'shubham sharma',
+    'shubham kumar',
+    'shubham dev',
+    'shubhams',
+    'shubhams.dev',
+    'full-stack developer',
+    'Go developer',
+    'TypeScript developer',
+    'Kubernetes',
+    'AWS',
+    'Next.js',
+    'Vue.js',
+    'Freelance developer',
+    'Software engineer',
+    'Backend developer',
+    'Frontend developer',
+  ].join(', '),
+  authors: [
+    {
+      name: 'Shubham Sharma',
+      url: 'https://www.shubhams.dev/',
+    },
+  ],
+  creator: 'Shubham Sharma',
+  applicationName: 'Shubhams.dev',
   twitter: {
-    site: "@shubhamku044",
-    creator: "@shubhamku044",
-    title: "Shubham Sharma | Full-Stack Developer",
+    site: '@shubhamku044',
+    creator: '@shubhamku044',
+    title: 'Shubham Sharma | Full-Stack Developer',
     description:
-      "Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.",
+      'Hello, I am Shubham Sharma, a full-stack developer specializing in TypeScript, Go and cloud technologies. I build scalable applications and optimize cloud infrastructure.',
+    card: 'summary_large_image',
+    // images: ['https://www.shubhams.dev/images/og-image.jpg'],
   },
   openGraph: {
-    title: "Shubham Sharma | Full-Stack Developer",
+    title: 'Shubham Sharma | Full-Stack Developer',
     description:
-      "Hello, I am Shubham Sharma, a full-stack developer with some knowledge of web3 also, a freelancer.",
-    type: "website",
+      'Full-stack developer with expertise in TypeScript, Go and cloud technologies. Passionate about building scalable and high-performance applications.',
+    type: 'website',
+    url: 'https://www.shubhams.dev/',
+    siteName: 'Shubhams.dev',
+    // images: [
+    //   {
+    //     url: 'https://www.shubhams.dev/images/og-image.jpg',
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Shubham Sharma - Full-Stack Developer & DevOps Enthusiast',
+    //   },
+    // ],
+    locale: 'en_US',
   },
+  alternates: {
+    canonical: 'https://www.shubhams.dev/',
+  },
+  manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: '#fffbeb',
+  viewportFit: 'contain',
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <RandomFavicon />
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} mx-auto min-h-screen max-w-2xl bg-amber-50 text-stone-800 antialiased`}
+      >
         <Script id="gtm-script" strategy="lazyOnload">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,16 +102,11 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-NK63G2QV"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <div className="p-4">
-          <Navbar />
-          <main className="mx-auto mb-16 mt-24 min-h-[90vh] max-w-4xl px-2 sm:px-10">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <main className="flex flex-col space-y-10 px-6 py-12 sm:py-24">{children}</main>
+        <Toaster />
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
