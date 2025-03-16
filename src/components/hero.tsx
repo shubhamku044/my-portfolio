@@ -17,7 +17,7 @@ export default function Hero() {
               modern technologies.
             </p>
             <div className="mt-4 flex items-center gap-4">
-              <div className="inline-block animate-pulse rounded-lg bg-amber-100/90 px-4 py-2">
+              <div className="inline-block rounded-lg bg-amber-100/90 px-4 py-2">
                 <div className="flex items-center text-sm font-medium text-stone-800/90">
                   <span className="mr-2">🚀</span>
                   Actively exploring new opportunities
