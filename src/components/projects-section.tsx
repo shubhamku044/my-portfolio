@@ -15,7 +15,8 @@ const projects = [
         La-Resume is a free, <BoldLink>open-source</BoldLink>, and ATS-friendly resume builder
         powered by LaTeX. Just enter your details, preview, and{' '}
         <BoldLink>download the PDF and LaTeX</BoldLink> source. Built with Next.js and TypeScript.
-        It is used by <BoldLink>100+ users</BoldLink> as of now.
+        It is used by <BoldLink>300+ users</BoldLink> as of now.{' '}
+        <BoldLink>80+ stars on GitHub.</BoldLink>
       </>
     ),
     image: '/projects/la-resume.png',
