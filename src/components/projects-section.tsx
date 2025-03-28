@@ -15,7 +15,7 @@ const projects = [
         La-Resume is a free, <BoldLink>open-source</BoldLink>, and ATS-friendly resume builder
         powered by LaTeX. Just enter your details, preview, and{' '}
         <BoldLink>download the PDF and LaTeX</BoldLink> source. Built with Next.js and TypeScript.
-        It is used by <BoldLink>300+ users</BoldLink> as of now. <BoldLink>80+</BoldLink> stars on
+        It is used by <BoldLink>800+ users</BoldLink> as of now. <BoldLink>110+</BoldLink> stars on
         GitHub.
       </>
     ),
@@ -39,18 +39,19 @@ const projects = [
     imageBlurHash: 'L4Ro{d~W@M?Z00Md?sRQ8xkXELWU',
   },
   {
-    title: 'Restaurant Management System',
+    title: 'Sheets Manager',
     description: (
       <>
-        Revolutionize restaurant management with a <BoldLink>GoLang-powered REST API</BoldLink>.
-        Seamlessly handle orders, inventory, and reservations with unparalleled performance and
-        security.
+        A powerful tool to <BoldLink>delete, copy, manage access, sort, and filter</BoldLink>
+        your Google Sheets effortlessly. Perform bulk actions, streamline your workflow, and stay
+        organized with <BoldLink>advanced filtering and automation</BoldLink>. No more tedious
+        manual tasks—manage everything in one place with ease.
       </>
     ),
-    image: 'https://opengraph.githubassets.com/1a/shubhamku044/restaurant-management-system',
-    techStack: ['GoLang', 'REST API', 'Gin', 'Gorm', 'MongoDB', 'Docker', 'Postman', 'JWT'],
-    website: null,
-    github: 'https://github.com/shubhamku044/restaurant-management-system',
+    image: '/projects/sheetsmanager.png',
+    techStack: ['Next.js', 'ReactJS', 'Google API', 'Vercel', 'TailwindCSS', 'ShadCN'],
+    website: 'https://sheetsmanager.com',
+    imageBlurHash: 'L7QT4P0100xtN1bI_2-:Dz~m_39I',
   },
   {
     title: 'Miro Board',
@@ -66,6 +67,20 @@ const projects = [
     website: 'https://miro-board-fawn.vercel.app/',
     github: 'https://github.com/shubhamku044/miro-board',
     imageBlurHash: 'L7QT4P0100xtN1bI_2-:Dz~m_39I',
+  },
+  {
+    title: 'Restaurant Management System',
+    description: (
+      <>
+        Revolutionize restaurant management with a <BoldLink>GoLang-powered REST API</BoldLink>.
+        Seamlessly handle orders, inventory, and reservations with unparalleled performance and
+        security.
+      </>
+    ),
+    image: 'https://opengraph.githubassets.com/1a/shubhamku044/restaurant-management-system',
+    techStack: ['GoLang', 'REST API', 'Gin', 'Gorm', 'MongoDB', 'Docker', 'Postman', 'JWT'],
+    website: null,
+    github: 'https://github.com/shubhamku044/restaurant-management-system',
   },
   {
     title: 'TypoSpeed Tracker',
