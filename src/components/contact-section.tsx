@@ -92,6 +92,7 @@ export default function ContactSection() {
         toast.error('Failed to send message. Please try again.');
       }
     } catch (error) {
+      console.error('Contact form error:', error);
       toast.error('An error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);

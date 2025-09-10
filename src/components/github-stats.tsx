@@ -61,15 +61,15 @@ export default function GitHubStats() {
         const reposData = await reposResponse.json();
 
         // Calculate total stars and forks
-        const totalStars = reposData.reduce((sum: number, repo: any) => sum + repo.stargazers_count, 0);
-        const totalForks = reposData.reduce((sum: number, repo: any) => sum + repo.forks_count, 0);
+        const totalStars = (reposData as GitHubRepo[]).reduce((sum: number, repo: GitHubRepo) => sum + repo.stargazers_count, 0);
+        const totalForks = (reposData as GitHubRepo[]).reduce((sum: number, repo: GitHubRepo) => sum + repo.forks_count, 0);
 
         // Get top 3 repositories by stars
-        const topRepos = reposData
-          .filter((repo: any) => !repo.fork) // Exclude forked repos
-          .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
+        const topRepos = (reposData as GitHubRepo[])
+          .filter((repo: GitHubRepo) => !repo.fork) // Exclude forked repos
+          .sort((a: GitHubRepo, b: GitHubRepo) => b.stargazers_count - a.stargazers_count)
           .slice(0, 3)
-          .map((repo: any) => ({
+          .map((repo: GitHubRepo) => ({
             name: repo.name,
             description: repo.description || "No description available",
             stars: repo.stargazers_count,
@@ -90,11 +90,11 @@ export default function GitHubStats() {
         setTopRepos(topRepos);
 
         // Fetch recent repository activity (commits, pushes, etc.)
-        const activityData = reposData
-          .filter((repo: any) => !repo.fork)
-          .sort((a: any, b: any) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+        const activityData = (reposData as GitHubRepo[])
+          .filter((repo: GitHubRepo) => !repo.fork)
+          .sort((a: GitHubRepo, b: GitHubRepo) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
           .slice(0, 10)
-          .map((repo: any) => ({
+          .map((repo: GitHubRepo) => ({
             name: repo.name,
             lastUpdated: new Date(repo.updated_at),
             language: repo.language,
@@ -176,8 +176,26 @@ export default function GitHubStats() {
   ];
 
   // We'll fetch real repository activity instead of fake contribution data
-  const [recentActivity, setRecentActivity] = useState<any[]>([]);
+  interface GitHubRepo {
+    name: string;
+    description: string | null;
+    stargazers_count: number;
+    forks_count: number;
+    language: string | null;
+    html_url: string;
+    updated_at: string;
+    fork: boolean;
+  }
 
+  interface ActivityItem {
+    name: string;
+    lastUpdated: Date;
+    language: string | null;
+    stars: number;
+    description: string | null;
+  }
+
+  const [recentActivity, setRecentActivity] = useState<ActivityItem[]>([]);
 
   if (isLoading) {
     return (
@@ -204,7 +222,7 @@ export default function GitHubStats() {
 
       {/* Floating code symbols */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-20 animate-float text-2xl text-green-400/20">{'</>'}</div>
+        <div className="animate-float absolute left-1/4 top-20 text-2xl text-green-400/20">{'</>'}</div>
         <div className="absolute right-1/4 top-40 animate-bounce text-xl text-blue-400/20">{'{ }'}</div>
         <div className="absolute bottom-32 left-1/3 animate-pulse text-lg text-purple-400/20">{'[ ]'}</div>
       </div>
@@ -244,7 +262,7 @@ export default function GitHubStats() {
               viewport={{ once: true }}
               className="group relative overflow-hidden"
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-20`}></div>
               <div className="relative rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-lg transition-all duration-300 hover:border-white/20 group-hover:scale-105">
                 <div className="mb-3 flex items-center justify-between">
                   <stat.icon className="size-8 text-white/70" />
@@ -253,7 +271,7 @@ export default function GitHubStats() {
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
-                    className={`text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+                    className={`bg-gradient-to-r text-3xl font-bold ${stat.color} bg-clip-text text-transparent`}
                   >
                     {stat.value}+
                   </motion.div>
@@ -286,17 +304,17 @@ export default function GitHubStats() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-lg transition-all duration-300 hover:border-white/20 hover:scale-105"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/20"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 <div className="relative">
                   <div className="mb-3 flex items-start justify-between">
-                    <h4 className="font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                    <h4 className="font-semibold text-white transition-colors group-hover:text-cyan-300">
                       {repo.name}
                     </h4>
                     <FaGithub className="size-5 text-white/50" />
                   </div>
-                  <p className="mb-4 text-sm text-white/70 line-clamp-2">
+                  <p className="mb-4 line-clamp-2 text-sm text-white/70">
                     {repo.description}
                   </p>
                   <div className="flex items-center justify-between">
@@ -375,12 +393,12 @@ export default function GitHubStats() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition-colors"
+                    className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10"
                   >
                     <div className="flex-1">
                       <div className="flex items-center gap-3">
                         <div className="flex items-center gap-2">
-                          <div className="size-3 bg-green-400 rounded-full"></div>
+                          <div className="size-3 rounded-full bg-green-400"></div>
                           <span className="font-medium text-white">{activity.name}</span>
                           {activity.language && (
                             <span className="rounded-full bg-blue-500/20 px-2 py-1 text-xs text-blue-300">
@@ -396,7 +414,7 @@ export default function GitHubStats() {
                         </div>
                       </div>
                       {activity.description && (
-                        <p className="mt-1 text-sm text-white/60 line-clamp-1">
+                        <p className="mt-1 line-clamp-1 text-sm text-white/60">
                           {activity.description}
                         </p>
                       )}
@@ -407,8 +425,8 @@ export default function GitHubStats() {
                   </motion.div>
                 ))
               ) : (
-                <div className="text-center text-white/60 py-8">
-                  <div className="inline-flex size-16 items-center justify-center rounded-full bg-white/5 mb-4">
+                <div className="py-8 text-center text-white/60">
+                  <div className="mb-4 inline-flex size-16 items-center justify-center rounded-full bg-white/5">
                     <FaGithub className="size-8" />
                   </div>
                   <p>Loading recent activity...</p>
