@@ -56,7 +56,7 @@ export default function WorkExperience() {
             return (
               <div key={index} className="py-3">
                 <button
-                  className="flex w-full items-start gap-3 group cursor-pointer focus:outline-none hover:bg-gray-100 rounded-md px-2 py-2 transition-colors"
+                  className="group flex w-full cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-gray-100 focus:outline-none"
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={isOpen}
                   aria-controls={`exp-panel-${index}`}
@@ -67,23 +67,23 @@ export default function WorkExperience() {
                     alt={job.company}
                     width={40}
                     height={40}
-                    className="rounded-full mt-1"
+                    className="mt-1 rounded-full"
                   />
                   <div className="flex-1 text-left">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <h3 className="text-base font-bold leading-tight">{job.company}</h3>
-                        <p className="text-xs text-gray-700 font-medium">{job.role}</p>
+                        <p className="text-xs font-medium text-gray-700">{job.role}</p>
                       </div>
-                      <div className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap flex items-center gap-1 mt-1 sm:mt-0">
+                      <div className="mt-1 flex items-center gap-1 whitespace-nowrap text-[11px] text-gray-500 sm:mt-0 sm:text-xs">
                         {job.duration}
                         <span className="hidden sm:inline">| {job.location}</span>
                       </div>
                     </div>
-                    <div className="text-xs text-gray-500 mt-0.5">{job.techStack}</div>
+                    <div className="mt-0.5 text-xs text-gray-500">{job.techStack}</div>
                   </div>
                   <svg
-                    className={`ml-2 mt-1 h-4 w-4 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-90' : 'rotate-0'} group-hover:text-gray-600`}
+                    className={`ml-2 mt-1 size-4 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-90' : 'rotate-0'} group-hover:text-gray-600`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -94,15 +94,15 @@ export default function WorkExperience() {
                 </button>
                 <div
                   id={`exp-panel-${index}`}
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'}`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 py-2 opacity-100' : 'max-h-0 py-0 opacity-0'}`}
                   style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
                 >
-                  <ul className="list-disc pl-8 pr-2 space-y-1 text-sm text-gray-800">
+                  <ul className="list-disc space-y-1 pl-8 pr-2 text-sm text-gray-800">
                     {job.details.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
-                  <div className="text-xs text-gray-500 mt-2 sm:hidden pl-8">
+                  <div className="mt-2 pl-8 text-xs text-gray-500 sm:hidden">
                     <span>{job.location}</span>
                   </div>
                 </div>
