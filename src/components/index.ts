@@ -5,8 +5,8 @@ import SkillsSection from './skills-section';
 import ProjectsSection from './projects-section';
 import ContactSection from './contact-section';
 import ExperienceSection from './experience-section';
-import Education from './education-section';
-import BoldLink from './bold-link';
+import InteractiveTerminal from './interactive-terminal';
+import GitHubStats from './github-stats';
 
 export {
   RandomFavicon,
@@ -16,6 +16,6 @@ export {
   ProjectsSection,
   ContactSection,
   ExperienceSection,
-  Education,
-  BoldLink,
+  InteractiveTerminal,
+  GitHubStats,
 };

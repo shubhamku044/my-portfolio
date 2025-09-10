@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'opengraph.githubassets.com',
       },
+      {
+        hostname: 'randomuser.me'
+      }
     ],
   },
 };

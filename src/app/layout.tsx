@@ -86,9 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <RandomFavicon />
       </head>
-      <body
-        className={`${inter.className} mx-auto min-h-screen max-w-2xl bg-amber-50 text-stone-800 antialiased`}
-      >
+      <body className={`${inter.className} min-h-screen bg-white text-gray-900 antialiased`}>
         <Script id="gtm-script" strategy="lazyOnload">
           {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -105,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <main className="flex flex-col space-y-10 px-6 py-12 sm:py-24">{children}</main>
+        <main>{children}</main>
         <Toaster />
         <Script
           strategy="lazyOnload"

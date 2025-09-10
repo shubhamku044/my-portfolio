@@ -4,8 +4,9 @@ import {
   SkillsSection,
   ProjectsSection,
   ContactSection,
-  Education,
   ExperienceSection,
+  InteractiveTerminal,
+  GitHubStats,
 } from '@/components';
 
 const Home = () => {
@@ -13,10 +14,11 @@ const Home = () => {
     <>
       <Hero />
       <AboutSection />
-      <ExperienceSection />
-      <Education />
       <SkillsSection />
+      <ExperienceSection />
       <ProjectsSection />
+      <InteractiveTerminal />
+      <GitHubStats />
       <ContactSection />
     </>
   );
