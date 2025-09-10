@@ -1,49 +1,114 @@
 'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 const workExperience = [
   {
-    company: 'TESTLIFY',
-    role: 'Full stack developer intern',
-    duration: 'October 2024 - Present',
+    company: 'Testlify',
+    role: 'Full Stack Developer',
+    duration: 'Oct 2024 – Present',
+    location: 'Mumbai, IN (Remote)',
     logo: 'https://testlify.com/wp-content/uploads/2023/10/cropped-cropped-Testlify-Icon-192x192.png',
+    techStack: 'Typescript, Vue.js, Nuxt.js, React Native, Express.js, MongoDB',
+    details: [
+      'Contributed to TypeScript migration in Nuxt.js codebase, improving type safety and maintainability.',
+      'Replaced base64 image storage with direct S3 uploads from markdown editor, cutting DB bloat and API load.',
+      'Implemented multi-monitor proctoring to block external screens, strengthening exam integrity for 2,000+ users.',
+      'Refactored large Vue files by initiating Option-to-Composition API migration and guiding teammates to build reusable composable and components.',
+      'Integrated reCAPTCHA in OTP flow, preventing spam from overseas bots and saving $5,000+ in Twilio credits.',
+      'Managed React Native app via Expo; upgraded audio question flow and removed deprecated packages.',
+      'Replaced bulky libraries with native Expo Camera and rerouted audio uploads from api.video to GCP for better performance.',
+    ],
   },
   {
-    company: 'FABLE',
-    role: 'Software Engineer Intern',
-    duration: 'November 2022 - June 2024',
+    company: 'Fable',
+    role: 'Software Engineer Intern (Founding Team)',
+    duration: 'Nov 2022 – June 2024',
+    location: 'Bengaluru, IN (Remote)',
     logo: 'https://www.sharefable.com/favicon.png',
+    techStack: 'React.js, Next.js, Express.js, AWS, Slack API, GA, GitHub Actions',
+    details: [
+      'Worked on Fable’s core B2B interactive demo platform from inception as part of the founding engineering team.',
+      'Built and maintained user interfaces in React.js using Styled Components, enhancing usability and code quality.',
+      'Created a real-time notification service integrating Slack API for instant alerts on form submissions.',
+      'Developed and maintained Fable’s browser extension with shared auth and interactive preview support.',
+      'Built landing page with Next.js and implemented CI/CD on AWS via GitHub Actions, improving SEO and reducing deployment time.',
+      'Tracked events with Google Analytics, driving 9,000+ monthly visitors through behavior-based optimizations.',
+    ],
   },
 ];
 
 export default function WorkExperience() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleAccordion = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
+
   return (
     <section id="experience">
       <div className="space-y-3">
         <h2 className="text-xl font-bold">Work Experience</h2>
         <div className="space-y-3">
-          {workExperience.map((job, index) => (
-            <div key={index} className="flex items-start">
-              <Image
-                src={job.logo}
-                alt={job.company}
-                width={44}
-                height={44}
-                className="rounded-full"
-              />
-              <div className="ml-4 flex flex-1 items-start justify-between">
-                <div>
-                  <h3 className="inline-flex items-center justify-center text-xs font-semibold leading-none sm:text-sm">
-                    {job.company}
-                  </h3>
-                  <p className="font-sans text-xs">{job.role}</p>
+          {workExperience.map((job, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={index} className="py-3">
+                <button
+                  className="flex w-full items-start gap-3 group cursor-pointer focus:outline-none hover:bg-gray-100 rounded-md px-2 py-2 transition-colors"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`exp-panel-${index}`}
+                  type="button"
+                >
+                  <Image
+                    src={job.logo}
+                    alt={job.company}
+                    width={40}
+                    height={40}
+                    className="rounded-full mt-1"
+                  />
+                  <div className="flex-1 text-left">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h3 className="text-base font-bold leading-tight">{job.company}</h3>
+                        <p className="text-xs text-gray-700 font-medium">{job.role}</p>
+                      </div>
+                      <div className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap flex items-center gap-1 mt-1 sm:mt-0">
+                        {job.duration}
+                        <span className="hidden sm:inline">| {job.location}</span>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-0.5">{job.techStack}</div>
+                  </div>
+                  <svg
+                    className={`ml-2 mt-1 h-4 w-4 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-90' : 'rotate-0'} group-hover:text-gray-600`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                <div
+                  id={`exp-panel-${index}`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'}`}
+                  style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
+                >
+                  <ul className="list-disc pl-8 pr-2 space-y-1 text-sm text-gray-800">
+                    {job.details.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                  <div className="text-xs text-gray-500 mt-2 sm:hidden pl-8">
+                    <span>{job.location}</span>
+                  </div>
                 </div>
-                <p className="text-muted-foreground text-right text-xs tabular-nums sm:text-sm">
-                  {job.duration}
-                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
