@@ -11,3 +11,36 @@
     @apply text-stone-600/100;
   }
 }
+
+/* Print styles for A4 format */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.5in;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Hide elements during print */
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Make backgrounds white for print */
+  .print\:bg-white {
+    background-color: #fff !important;
+  }
+  
+  /* Remove shadows for print */
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  /* Remove max-width constraints for print */
+  .print\:max-w-none {
+    max-width: none !important;
+  }
+}

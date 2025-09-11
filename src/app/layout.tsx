@@ -4,8 +4,9 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { RandomFavicon } from '@/components';
 import { Toaster } from '@/components/ui/sonner';
+import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -84,41 +85,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <RandomFavicon />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={`${inter.className} min-h-screen bg-white text-gray-900 antialiased`}>
-        <Script id="gtm-script" strategy="lazyOnload">
-          {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-NK63G2QV');
-        `}
-        </Script>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NK63G2QV"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
-        </noscript>
-        <main>{children}</main>
-        <Toaster />
-        <Script
-          strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
-        />
-        <Analytics />
-        <SpeedInsights />
-        <Script id="ga-script" strategy="lazyOnload">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HF2NQPTQ7W');
+      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300`}>
+        <ThemeProvider>
+          <Script id="gtm-script" strategy="lazyOnload">
+            {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NK63G2QV');
           `}
-        </Script>
+          </Script>
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NK63G2QV"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
+          <ThemeToggle />
+          <main>{children}</main>
+          <Toaster />
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=G-HF2NQPTQ7W`}
+          />
+          <Analytics />
+          <SpeedInsights />
+          <Script id="ga-script" strategy="lazyOnload">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HF2NQPTQ7W');
+            `}
+          </Script>
+        </ThemeProvider>
       </body>
     </html>
   );
