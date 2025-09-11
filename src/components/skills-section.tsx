@@ -58,7 +58,7 @@ export default function SkillsSection() {
                     viewport={{ once: true }}
                     className="text-gray-700 dark:text-gray-300 text-sm flex items-center gap-2"
                   >
-                    <div className="w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
+                    <div className="size-1 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
                     {skill}
                   </motion.div>
                 ))}

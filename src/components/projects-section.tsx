@@ -80,7 +80,7 @@ export default function ProjectsSection() {
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                       aria-label={`Visit ${project.title} website`}
                     >
-                      <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                      <ArrowTopRightOnSquareIcon className="size-4" />
                     </Link>
                   )}
                   {project.github && (
@@ -91,7 +91,7 @@ export default function ProjectsSection() {
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                       aria-label={`View ${project.title} source code`}
                     >
-                      <CodeBracketIcon className="w-4 h-4" />
+                      <CodeBracketIcon className="size-4" />
                     </Link>
                   )}
                 </div>

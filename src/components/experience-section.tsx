@@ -36,12 +36,6 @@ const experiences = [
   }
 ];
 
-const education = {
-  institution: 'Techno Main Salt Lake, Kolkata',
-  degree: 'B.Tech in Computer Science and Engineering',
-  duration: '2021 - 2025'
-};
-
 export default function ExperienceSection() {
   return (
     <section className="py-4 border-b border-gray-200 dark:border-gray-700">
@@ -84,7 +78,7 @@ export default function ExperienceSection() {
                   <div>{exp.location}</div>
                   {exp.current && (
                     <span className="inline-flex items-center gap-1 text-green-600 dark:text-green-400 text-xs">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="size-2 bg-green-500 rounded-full"></div>
                       Current
                     </span>
                   )}
@@ -109,7 +103,7 @@ export default function ExperienceSection() {
                     viewport={{ once: true }}
                     className="flex items-start gap-2 text-gray-700 dark:text-gray-300 text-sm"
                   >
-                    <div className="w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 shrink-0"></div>
+                    <div className="size-1 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 shrink-0"></div>
                     <span className="leading-relaxed">
                       {achievement}
                     </span>

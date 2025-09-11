@@ -70,7 +70,7 @@ export default function ContactSection() {
             <div className="space-y-2">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <item.icon className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                  <item.icon className="size-4 text-gray-600 dark:text-gray-400" />
                   <div>
                     <span className="text-sm text-gray-500 dark:text-gray-500">{item.label}:</span>
                     {item.href ? (
@@ -102,7 +102,7 @@ export default function ContactSection() {
             <div className="space-y-2">
               {socialLinks.map((social, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <social.icon className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                  <social.icon className="size-4 text-gray-600 dark:text-gray-400" />
                   <div>
                     <span className="text-sm text-gray-500 dark:text-gray-500">{social.label}:</span>
                     <Link
@@ -133,7 +133,7 @@ export default function ContactSection() {
               href="mailto:shubhamku044@gmail.com"
               className="inline-flex items-center gap-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-4 py-2 rounded text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
             >
-              <HiMail className="w-4 h-4" />
+              <HiMail className="size-4" />
               Send Email
             </Link>
             <Link

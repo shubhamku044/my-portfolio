@@ -1,8 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 
@@ -74,7 +72,7 @@ export default function Hero() {
               {/* Contact Info */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-3 py-1 rounded-lg">
-                  <HiMail className="w-4 h-4" />
+                    <HiMail className="size-4" />
                   <a href="mailto:shubhamku044@gmail.com" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors font-medium">
                     shubhamku044@gmail.com
                   </a>
@@ -83,17 +81,17 @@ export default function Hero() {
                   <a href="https://github.com/shubhamku044" target="_blank" rel="noopener noreferrer" 
                      className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                      title="GitHub Profile">
-                    <FaGithub className="w-4 h-4" />
+                    <FaGithub className="size-4" />
                   </a>
                   <a href="https://linkedin.com/in/shubhamku044" target="_blank" rel="noopener noreferrer"
                      className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                      title="LinkedIn Profile">
-                    <FaLinkedin className="w-4 h-4" />
+                    <FaLinkedin className="size-4" />
                   </a>
                   <a href="https://x.com/shubhamku044" target="_blank" rel="noopener noreferrer"
                      className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                      title="Twitter Profile">
-                    <FaTwitter className="w-4 h-4" />
+                    <FaTwitter className="size-4" />
                   </a>
                 </div>
                 <a href="https://la-resume.tech/shared/08583c3b-e208-4256-89d9-73ec36a15957" 
